@@ -1,20 +1,14 @@
-<html>
-
-<head>
-
-</head>
-
-<body>
+{% extends 'base.html' %}
+{% block content %}
 
 	{% for hike in hikes %}
-	    {{hike.hike_region}}
-	    {{hike.hike_difficulty}}
-	    {{hike.hike_parking}}
-	    {{hike.disabled_access}}
-	    {{hike.hike_duration}}
-	    {{hike.hike_distance}}
+	{{hike.hike_region}}
+	{{hike.hike_difficulty}}
+	{{hike.hike_parking}}
+	{{hike.disabled_access}}
+    {{hike.hike_duration}}
+	{{hike.hike_distance}}
 	{% endfor %}
 
-</body>
 
-</html>
+{% endblock %}
