@@ -18,18 +18,25 @@ app.secret_key = 'mysecret'
 mongo = PyMongo(app)
 
 @app.route('/')
-@app.route('/home_hikes')
-def home_hikes():
+@app.route('/home')
+def home():
     return render_template('home.html', hikes=mongo.db.hikes.find())
 
-@app.route('/about_me')
-def about_me():
-    return render_template('aboutme.html')
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+@app.route('/hikes')
+def hikes():
+    return render_template('hikes.html')
+
+@app.route('/addhikes')
+def addhikes():
+    return render_template('addhikes.html')
 
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
-
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
