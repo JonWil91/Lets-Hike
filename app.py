@@ -42,6 +42,27 @@ def insert_hikes():
     hikes.insert_one(request.form.to_dict())
     return redirect(url_for('hikes'))
 
+@app.route('/edit_hike/<hike_id>', methods=["POST"])
+def edit_hike(hike_id):
+    hikes = mongo.db.hikes
+    hikes.edit( {'_id': ObjectId(hike_id)},
+    {
+        'hike_region': request.form.get('hike_region'),
+        'hike_description': request.form.get('hike_description'),
+        'hike_difficulty': request.form.get('hike_difficulty'),
+        'hike_parking': request.form.get('hike_parking'),
+        'disabled_access': request.form.get('disabled_access'),
+        'hike_postcode': request.form.get('hike_postcode'),
+        'hike_duration': request.form.get('hike_duration'),
+        'hike_distance': request.form.get('hike_distance')
+    })
+    return redirect(url_for('hikes'))
+
+@app.route('/delete_hike/<hike_id>')
+def delete_hike(hike_id):
+    mongo.db.hikes.remove({'_id': ObjectId(hike_id)})
+    return redirect(url_for('hikes'))
+
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
