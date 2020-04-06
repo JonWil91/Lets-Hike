@@ -28,11 +28,19 @@ def about():
 
 @app.route('/hikes')
 def hikes():
-    return render_template('hikes.html')
+    _hikes = mongo.db.hikes.find()
+    hike_list = [hike for hike in _hikes]
+    return render_template('hikes.html', hikes = hike_list)
 
 @app.route('/addhikes')
 def addhikes():
     return render_template('addhikes.html')
+
+@app.route('/insert_hikes', methods=['POST'])
+def insert_hikes():
+    hikes = mongo.db.hikes
+    hikes.insert_one(request.form.to_dict())
+    return redirect(url_for('hikes'))
 
 @app.route('/contact')
 def contact():
