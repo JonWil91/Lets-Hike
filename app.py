@@ -12,7 +12,7 @@ app = Flask(__name__)
 app.config["MONGO_DBNAME"] = "hiking_database"
 
 app.config["MONGO_URI"] = os.environ.get("MONGO_URI")
-app.secret_key = 'mysecret'
+
 
 
 mongo = PyMongo(app)
@@ -20,7 +20,7 @@ mongo = PyMongo(app)
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html', hikes=mongo.db.hikes.find())
+    return render_template('home.html')
 
 @app.route('/about')
 def about():
@@ -42,10 +42,15 @@ def insert_hikes():
     hikes.insert_one(request.form.to_dict())
     return redirect(url_for('hikes'))
 
-@app.route('/edit_hike/<hike_id>', methods=["POST"])
+@app.route('/edit_hike/<hike_id>')
 def edit_hike(hike_id):
+    the_hike =  mongo.db.hikes.find_one({"_id": ObjectId(hike_id)})
+    return render_template('edithike.html', hike=the_hike)
+
+@app.route('/update_hike/<hike_id>', methods=["POST"])
+def update_hike(hike_id):
     hikes = mongo.db.hikes
-    hikes.edit( {'_id': ObjectId(hike_id)},
+    hikes.update({'_id': ObjectId(hike_id)},
     {
         'hike_region': request.form.get('hike_region'),
         'hike_description': request.form.get('hike_description'),
@@ -71,4 +76,3 @@ if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
     port=int(os.environ.get('PORT')),
     debug=True)
-    SECRET_KEY = os.environ.get('mysecret')
