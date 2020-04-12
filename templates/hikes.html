@@ -4,7 +4,11 @@
 
 <h1>Hikes</h1>
 
-<div id="map"></div>
+<div class="container">
+	<div class="row">
+		<div id="map"></div>
+	</div>
+</div>
 
 <div class="row">
 	<ul class="collapsible" data-collapsible="accordian">
@@ -16,8 +20,10 @@
 				</div>
 				<div class="col s2">
 					<div class="inline_actions">
-						<a href="{{ url_for('edit_hike', hike_id=hike._id) }}" class="waves-effect waves-light btn btn_small">Edit</a>
-						<a href="{{ url_for('delete_hike', hike_id=hike._id) }}" class="waves-effect waves-light btn btn_small blue">Delete</a>
+						<a href="{{ url_for('edit_hike', hike_id=hike._id) }}"
+							class="waves-effect waves-light btn btn_small">Edit</a>
+						<a href="{{ url_for('delete_hike', hike_id=hike._id) }}"
+							class="waves-effect waves-light btn btn_small blue">Delete</a>
 					</div>
 				</div>
 				<div class="task_header  col s9">
@@ -33,10 +39,22 @@
 				<p>Parking: {{hike.hike_parking}}</p>
 				<p>Hiking Disable Access: {{hike.hike_disabled}}</p>
 				<p>Hike Location: {{hike.hike_postcode}}</p>
+                <p>Hike Coordinates: {{hike.hike_coordinates}}</p>
 			</div>
 		</li>
 		{% endfor %}
+
+        {% block js %}
+
+        <script>
+        
+        
+        
+        </script>
+
+
+        {% endblock %}
+
 	</ul>
 </div>
 {% endblock %}
-

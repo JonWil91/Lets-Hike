@@ -59,7 +59,8 @@ def update_hike(hike_id):
         'disabled_access': request.form.get('disabled_access'),
         'hike_postcode': request.form.get('hike_postcode'),
         'hike_duration': request.form.get('hike_duration'),
-        'hike_distance': request.form.get('hike_distance')
+        'hike_distance': request.form.get('hike_distance'),
+        'hike_coordinates': request.form.get('hike_coordinates')
     })
     return redirect(url_for('hikes'))
 
