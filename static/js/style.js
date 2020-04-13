@@ -30,7 +30,7 @@ let walesIcon = new L.Icon({
     iconAnchor: [12, 25]
 });
 
-// Markers for the three locations for three highest peaks in UK
+// Markers for the three highest peaks in UK
 
 const myScotMarker = L.marker([56.796956, -5.003272], {icon: scotIcon}).addTo(map).bindTooltip("Ben Nevis");
 

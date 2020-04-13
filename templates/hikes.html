@@ -39,22 +39,24 @@
 				<p>Parking: {{hike.hike_parking}}</p>
 				<p>Hiking Disable Access: {{hike.hike_disabled}}</p>
 				<p>Hike Location: {{hike.hike_postcode}}</p>
-                <p>Hike Coordinates: {{hike.hike_coordinates}}</p>
+				<p>Hike Coordinates: {{hike.hike_coordinates}}</p>
 			</div>
 		</li>
 		{% endfor %}
 
-        {% block js %}
-
-        <script>
-        
-        
-        
-        </script>
-
-
-        {% endblock %}
 
 	</ul>
 </div>
+
+{% endblock %}
+
+{% block js %}
+
+<script>
+
+
+
+</script>
+
+
 {% endblock %}
