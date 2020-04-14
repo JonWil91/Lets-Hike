@@ -29,7 +29,10 @@ def about():
 def hikes():
     _hikes = mongo.db.hikes.find()
     hike_list = [hike for hike in _hikes]
-    return render_template('hikes.html', hikes = hike_list)
+    _counties = mongo.db.counties.find()
+    county_list = [county for county in _counties]
+    return render_template('hikes.html', hikes = hike_list,
+                                        counties = county_list)
 
 @app.route('/addhikes')
 def addhikes():

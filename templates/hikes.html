@@ -26,13 +26,15 @@
 							class="waves-effect waves-light btn btn_small blue">Delete</a>
 					</div>
 				</div>
+                
 				<div class="task_header  col s9">
-					<strong>Region: {{hike.hike_region}}</strong> - Difficulty: {{hike.hike_difficulty}}
-
+					<strong>Region: {{hike.hike_region}}</strong> - County: {{counties.county_name}}
 				</div>
+               
 
 			</div>
 			<div class="collapsible-body">
+				<p>Difficulty: {{hike.hike_difficulty}}</p>
 				<p>Hike Description: {{hike.hike_description}}</p>
 				<p>Hike Duration: {{hike.hike_duration}}</p>
 				<p>Hike Distance: {{hike.hike_distance}}</p>

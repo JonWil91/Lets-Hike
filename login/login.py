@@ -37,3 +37,6 @@
 #         return 'That username already exists!'
 
 #     return render_template('register.html')
+
+
+# login python authentication and index and register.html copied from https://www.youtube.com/watch?v=vVx1737auSE
