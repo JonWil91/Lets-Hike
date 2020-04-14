@@ -33,7 +33,9 @@ def hikes():
 
 @app.route('/addhikes')
 def addhikes():
-    return render_template('addhikes.html')
+    _counties = mongo.db.counties.find()
+    county_list = [county for county in _counties]
+    return render_template('addhikes.html', counties = county_list)
 
 @app.route('/insert_hikes', methods=['POST'])
 def insert_hikes():
@@ -44,7 +46,9 @@ def insert_hikes():
 @app.route('/edit_hike/<hike_id>')
 def edit_hike(hike_id):
     the_hike =  mongo.db.hikes.find_one({"_id": ObjectId(hike_id)})
-    return render_template('edithike.html', hike=the_hike)
+    all_counties =  mongo.db.counties.find()
+    return render_template('edithike.html', hike=the_hike,
+                            counties=all_counties)
 
 @app.route('/update_hike/<hike_id>', methods=["POST"])
 def update_hike(hike_id):
@@ -52,6 +56,7 @@ def update_hike(hike_id):
     hikes.update({'_id': ObjectId(hike_id)},
     {
         'hike_region': request.form.get('hike_region'),
+        'county_name': request.form.get('county_name'),
         'hike_description': request.form.get('hike_description'),
         'hike_difficulty': request.form.get('hike_difficulty'),
         'hike_parking': request.form.get('hike_parking'),
