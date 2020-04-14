@@ -3,7 +3,22 @@
 <h3>Edit Hike</h3>
 <div class="row">
 	<form action="{{ url_for('update_hike', hike_id=hike._id) }}" method="POST" class="col s12">
-
+		<div class="row">
+			<div class="input-field col s12">
+				<i class="material-icons prefix">poll</i>
+				<select id="counties" name="county_name">
+                  <option value="" disabled selected>Choose County</option>
+                  {% for cat in counties %}
+                      {% if cat.county_name == hike.county_name %}
+                      <option value="{{cat.county_name}}" selected >{{cat.county_name}}</option>
+                      {% else %}
+                       <option value="{{cat.county_name}}">{{cat.county_name}}</option>
+                    {% endif %}
+                  {% endfor %}
+                </select>
+				<label>County Category</label>
+			</div>
+		</div>
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">assignment</i>
