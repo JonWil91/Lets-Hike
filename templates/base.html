@@ -19,7 +19,15 @@
 		<nav>
 			<div class="nav-wrapper">
 				<a href="{{url_for('home')}}" class="brand-logo">Let's Hike</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
+					<li><a href="{{url_for('home')}}">Home</a></li>
+					<li><a href="{{url_for('about')}}">About</a></li>
+					<li><a href="{{url_for('hikes')}}">Hikes</a></li>
+					<li><a href="{{url_for('addhikes')}}">Add Hikes</a></li>
+					<li><a href="{{url_for('contact')}}">Contact</a></li>
+				</ul>
+				<ul class="side-nav" id="mobile-demo">
 					<li><a href="{{url_for('home')}}">Home</a></li>
 					<li><a href="{{url_for('about')}}">About</a></li>
 					<li><a href="{{url_for('hikes')}}">Hikes</a></li>
@@ -39,14 +47,15 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 	<script src="static/js/style.js"></script>
-    <script type="text/javascript">
+	<script type="text/javascript">
 		$(document).ready(function(){
         $('.collapsible').collapsible();
         $('select').material_select();
+        $(".button-collapse").sideNav();
   });
-    </script>
+	</script>
 
-	
+
 
 	{% block js %}
 
