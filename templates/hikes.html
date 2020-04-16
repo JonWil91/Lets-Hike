@@ -28,13 +28,20 @@
 									class="waves-effect waves-light btn btn_small blue">Delete</a>
 							</div>
 						</div>
-                        {% for cat in counties %}
 
 						<div class="task_header  col s9">
-							<strong>Region: {{hike.hike_region}}</strong> - County: {{counties.county_name}}
-						</div>
-                        {% endfor %}
+							<strong>Region: {{hike.hike_region}}</strong>
 
+							<p id="counties" name="county_name">
+                                    {% for cat in counties %}
+                                    {% if cat.county_name == hike.county_name %}
+                                <option value="{{cat.county_name}}" selected >County: {{cat.county_name}}</option>
+                                    {% endif %}
+                                    {% endfor %}
+                             </p>
+
+
+						</div>
 
 					</div>
 					<div class="collapsible-body">
@@ -56,17 +63,6 @@
 	</div>
 </div>
 
-
-
-{% endblock %}
-
-{% block js %}
-
-<script>
-
-
-
-</script>
 
 
 {% endblock %}
