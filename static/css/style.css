@@ -30,5 +30,12 @@
     
 }
 
-
+.input-box {
+    border-style: solid;
+    border-width: 5px;
+    border-color: blue;
+    margin: 10px;
+    padding: 20px;
+    -webkit-appearance: none;
+}
 
