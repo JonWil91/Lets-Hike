@@ -10,61 +10,53 @@
 	</div>
 </div>
 
-<div class="container section">
-	<div class="row">
-		<div class="col s12">
-			<ul class="collapsible break" data-collapsible="accordian">
-				{% for hike in hikes %}
-				<li>
-					<div class="collapsible-header">
-
-						<div class="col s2">
-							<div class="inline_actions">
-								<a href="{{ url_for('edit_hike', hike_id=hike._id) }}"
-									class="waves-effect waves-light btn btn_small">Edit</a>
-								<a href="{{ url_for('delete_hike', hike_id=hike._id) }}" onclick="return confirm('Are you sure you want to delete this hike?');"
-									class="waves-effect waves-light btn btn_small blue">Delete</a>
+<div class="container">
+	<ul>
+    {% for hike in hikes %}
+		<div class="row">
+			<div class="col s12">
+				<ul class="collapsible break" data-collapsible="accordian">
+					<li>
+						<div class="collapsible-header">
+							<div class="col s2">
+								<div class="inline_actions">
+									<a href="{{ url_for('edit_hike', hike_id=hike._id) }}"
+										class="waves-effect waves-light btn btn_small">Edit</a>
+									<a href="{{ url_for('delete_hike', hike_id=hike._id) }}"
+										onclick="return confirm('Are you sure you want to delete this hike?');"
+										class="waves-effect waves-light btn btn_small blue">Delete</a>
+								</div>
+							</div>
+							<div class="task_header  col s9">
+								<strong>Town / City: {{hike.hike_region}}</strong>
+								<p id="counties" name="county_name">
+									{% for cat in counties %}
+									{% if cat.county_name == hike.county_name %}
+									<option value="{{cat.county_name}}" selected>County: {{cat.county_name}}</option>
+									{% endif %}
+									{% endfor %}
+								</p>
+							</div>
+							<div class="col s1">
+								<i class="material-icons">expand_more</i>
 							</div>
 						</div>
-
-						<div class="task_header  col s9">
-							<strong>Town / City: {{hike.hike_region}}</strong>
-							<p id="counties" name="county_name">
-								{% for cat in counties %}
-								{% if cat.county_name == hike.county_name %}
-								<option value="{{cat.county_name}}" selected>County: {{cat.county_name}}</option>
-								{% endif %}
-								{% endfor %}
-							</p>
+						<div class="collapsible-body">
+							<p>Difficulty: {{hike.hike_difficulty}}</p>
+							<p>Hike Description: {{hike.hike_description}}</p>
+							<p>Hike Duration: {{hike.hike_duration}}</p>
+							<p>Hike Distance: {{hike.hike_distance}}</p>
+							<p>Parking: {{hike.hike_parking}}</p>
+							<p>Disabled Access: {{hike.disabled_access}}</p>
+							<p>Hike Location: {{hike.hike_postcode}}</p>
+							<p>Hike Coordinates: {{hike.hike_coordinates}}</p>
 						</div>
-						<div class="col s1">
-							<i class="material-icons">expand_more</i>
-						</div>
-					</div>
-
-					<div class="collapsible-body">
-						<p>Difficulty: {{hike.hike_difficulty}}</p>
-						<p>Hike Description: {{hike.hike_description}}</p>
-						<p>Hike Duration: {{hike.hike_duration}}</p>
-						<p>Hike Distance: {{hike.hike_distance}}</p>
-						<p>Parking: {{hike.hike_parking}}</p>
-						<p>Disabled Access: {{hike.disabled_access}}</p>
-						<p>Hike Location: {{hike.hike_postcode}}</p>
-						<p>Hike Coordinates: {{hike.hike_coordinates}}</p>
-					</div>
-				</li>
-
-                
-
-				{% endfor %}
-                
-
-
-			</ul>
+					</li>
+				</ul>
+			</div>
 		</div>
-	</div>
+        {% endfor %}
+	</ul>
 </div>
-
-
 
 {% endblock %}
