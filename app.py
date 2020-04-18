@@ -57,8 +57,12 @@ def insert_hikes():
 def edit_hike(hike_id):
     the_hike =  mongo.db.hikes.find_one({"_id": ObjectId(hike_id)})
     all_counties =  mongo.db.counties.find()
+    eng_counties =  mongo.db.eng_counties.find()
+    scot_counties =  mongo.db.scot_counties.find()
+    wales_counties =  mongo.db.wales_counties.find()
     return render_template('edithike.html', hike=the_hike,
-                            counties=all_counties)
+                            counties=all_counties, engcounties = eng_counties, 
+                            scotcounties = scot_counties, walescounties = wales_counties)
 
 @app.route('/update_hike/<hike_id>', methods=["POST"])
 def update_hike(hike_id):
