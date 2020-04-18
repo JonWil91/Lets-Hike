@@ -27,7 +27,7 @@
 										class="waves-effect waves-light btn btn_small blue">Delete</a>
 								</div>
 							</div>
-							<div class="task_header  col s9">
+							<div class="task_header col s9">
 								<strong>Town / City: {{hike.hike_region}}</strong>
 								<p id="counties" name="county_name">
 									{% for cat in counties %}
@@ -41,9 +41,9 @@
 								<i class="material-icons">expand_more</i>
 							</div>
 						</div>
-						<div class="collapsible-body">
-							<p>Difficulty: {{hike.hike_difficulty}}</p>
-							<p>Hike Description: {{hike.hike_description}}</p>
+						<div class="collapsible-body center-align">
+							<p>Difficulty: {{hike.hike_difficulty}}
+							Hike Description: {{hike.hike_description}}</p>
 							<p>Hike Duration: {{hike.hike_duration}}</p>
 							<p>Hike Distance: {{hike.hike_distance}}</p>
 							<p>Parking: {{hike.hike_parking}}</p>
@@ -60,3 +60,18 @@
 </div>
 
 {% endblock %}
+
+<!-- {% for greeting in greetings %}
+  {% if greeting.author %}
+    <b>{{ greeting.author }}</b> wrote:
+  {% else %}
+    An anonymous person wrote:
+  {% endif %}
+  <blockquote>{{ greeting.content|escape }}</blockquote>
+  <script type="text/javascript">
+     var greeting_author = "{{ greeting.author }}";
+     if(greeting_author === someVariable){
+        // do other stuff here
+     }
+  </script>
+{% endfor %} -->
