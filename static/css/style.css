@@ -37,9 +37,11 @@ body {
 /* Hikes */
 
 #map {
-    height: 350px;
+    height: 370px;
     border-radius: 20px;
 }
+
+/* /Hikes */
 
 /* Add Hikes */
 
@@ -50,6 +52,10 @@ body {
     margin: 10px;
     padding: 20px;
     -webkit-appearance: none;
+    background-color: #fafafa;
+}
+
+.collapsible-header, .collapsible-body {
     background-color: #fafafa;
 }
 

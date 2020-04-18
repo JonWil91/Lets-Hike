@@ -6,7 +6,7 @@ var mapTileLayers = L.tileLayer("http://services.arcgisonline.com/arcgis/rest/se
 
 var map = L.map("map", {
     layers: [mapTileLayers],
-    center: [53.8008, 1.5491],
+    center: [54.330606, -2.746197],
     zoom: 5
 });
 
