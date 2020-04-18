@@ -31,8 +31,15 @@ def hikes():
     hike_list = [hike for hike in _hikes]
     _counties = mongo.db.counties.find()
     county_list = [county for county in _counties]
+    _engcounties = mongo.db.eng_counties.find()
+    eng_county_list = [engcounty for engcounty in _engcounties]
+    _scotcounties = mongo.db.scot_counties.find()
+    scot_county_list = [scotcounty for scotcounty in _scotcounties]
+    _walescounties = mongo.db.wales_counties.find()
+    wales_county_list = [walescounty for walescounty in _walescounties]
     return render_template('hikes.html', hikes = hike_list,
-                                        counties = county_list)
+                                        counties = county_list, engcounties= eng_county_list,
+                                        scotcounties = scot_county_list, walescounties = wales_county_list)
 
 @app.route('/addhikes')
 def addhikes():
