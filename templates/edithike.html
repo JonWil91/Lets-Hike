@@ -3,7 +3,7 @@
 <h3>Edit Hike</h3>
 <div class="row">
 	<form action="{{ url_for('update_hike', hike_id=hike._id) }}" method="POST" class="col s12">
-		<div class="row">
+		<!-- <div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">poll</i>
 				<select id="counties" name="county_name">
@@ -18,41 +18,42 @@
                 </select>
 				<label>County Category</label>
 			</div>
-		</div>
+		</div> -->
+
 
 		<div class="row">
 			<div class="input-field col s12">
 				<i class="material-icons prefix">poll</i>
-				<select>
-                  <option value="" disabled selected>Choose County</option>
-                  <optgroup label="England">
+				<select id="county" name="county_name">
+                <option value="" disabled>Choose your option</option>
+                <optgroup label="England">
                   {% for cat in engcounties %}
-                      {% if cat.eng_county == hike.eng_county %}
-                      <option value="{{cat.eng_county}}" selected >{{cat.eng_county}}</option>
-                      {% else %}
-                       <option value="{{cat.eng_county}}">{{cat.eng_county}}</option>
+                    {% if cat.eng_county == hike.county_name %}
+                        <option value="{{cat.eng_county}}" selected>{{hike.county_name}}</option>
+                    {% else %}
+                        <option value="{{cat.eng_county}}">{{cat.eng_county}}</option>
                     {% endif %}
                   {% endfor %}
-                  </optgroup>>
-                  <optgroup label="Scotland">
-                  {% for cat in scotcounties %}
-                      {% if cat.scot_county == hike.scot_county %}
-                      <option value="{{cat.scot_county}}" selected >{{cat.scot_county}}</option>
-                      {% else %}
-                       <option value="{{cat.scot_county}}">{{cat.scot_county}}</option>
-                    {% endif %}
+                </optgroup>
+                <optgroup label="Scotland">
+                    {% for cat in scotcounties %}
+                        {% if cat.scot_county == hike.county_name %}
+                            <option value="{{cat.scot_county}}" selected>{{hike.county_name}}</option>
+                        {% else %}
+                            <option value="{{cat.scot_county}}">{{cat.scot_county}}</option>
+                        {% endif %}
                   {% endfor %}
-                  </optgroup>
-                  <optgroup label="Wales">
-                  {% for cat in walescounties %}
-                      {% if cat.wales_county == hike.wales_county %}
-                      <option value="{{cat.wales_county}}" selected >{{cat.wales_county}}</option>
-                      {% else %}
-                       <option value="{{cat.wales_county}}">{{cat.wales_county}}</option>
-                    {% endif %}
+                </optgroup>
+                <optgroup label="Wales">
+                    {% for cat in walescounties %}
+                        {% if cat.wales_county == hike.county_name %}
+                            <option value="{{cat.wales_county}}" selected>{{hike.county_name}}</option>
+                        {% else %}
+                            <option value="{{cat.wales_county}}">{{cat.wales_county}}</option>
+                        {% endif %}
                   {% endfor %}
-                  </optgroup>
-                </select>
+                </optgroup>
+            </select>
 				<label>County Category</label>
 			</div>
 		</div>
