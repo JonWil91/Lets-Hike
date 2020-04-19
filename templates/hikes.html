@@ -29,20 +29,10 @@
 							</div>
 							<div class="task_header col s9">
 								<strong>Town / City: {{hike.hike_region}}</strong>
-								<!-- <p id="county" name="county_name">
-									{% for cat in counties %}
-									{% if cat.county_name == hike.county_name %}
-									<option value="{{cat.county_name}}" selected>County: {{cat.county_name}}</option>
-									{% endif %}
-									{% endfor %}
-								</p> -->
 
 								<p id="county" name="county_name">
-                                <strong>County: {{hike.county_name}}</strong>
+									<strong>County: {{hike.county_name}}</strong>
 								</p>
-
-
-
 
 							</div>
 							<div class="col s1">
@@ -66,6 +56,16 @@
 		{% endfor %}
 	</ul>
 </div>
+
+{% endblock %}
+
+<script>
+
+</script>
+
+{% block js %}
+
+
 
 {% endblock %}
 
