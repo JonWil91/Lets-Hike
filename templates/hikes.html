@@ -59,14 +59,17 @@
 
 {% endblock %}
 
-<script>
 
-</script>
 
 {% block js %}
+{% for hike in hikes %}
 
+<script>
 
+var marker = L.marker([{{hike.hike_coordinates}}]).addTo(map);
 
+</script>
+{% endfor %}
 {% endblock %}
 
 <!-- {% for greeting in greetings %}

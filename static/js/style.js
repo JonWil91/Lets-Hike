@@ -32,11 +32,13 @@ let walesIcon = new L.Icon({
 
 // Markers for the three highest peaks in UK
 
-const myScotMarker = L.marker([56.796956, -5.003272], {icon: scotIcon}).addTo(map).bindTooltip("Ben Nevis");
+const myScotMarker = L.marker([56.796956, -5.003272], { icon: scotIcon }).addTo(map).bindTooltip("Ben Nevis");
 
-const myEnglandMarker = L.marker([54.595270, -3.195633], {icon: engIcon}).addTo(map).bindTooltip("Scarfell Pike");
+const myEnglandMarker = L.marker([54.595270, -3.195633], { icon: engIcon }).addTo(map).bindTooltip("Scarfell Pike");
 
-const myWalesMarker = L.marker([53.073936, -4.076236], {icon: walesIcon}).addTo(map).bindTooltip("Snowden");
+const myWalesMarker = L.marker([53.073936, -4.076236], { icon: walesIcon }).addTo(map).bindTooltip("Snowden");
+
+
 
 
 
