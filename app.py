@@ -92,6 +92,7 @@ def update_hike(hike_id):
         'hike_duration': request.form.get('hike_duration'),
         'hike_distance': request.form.get('hike_distance'),
         'hike_name': request.form.get('hike_name'),
+        'multiple_selction': request.form.getlist('multiple_selction'),
         'hike_coordinates': request.form.get('hike_coordinates')
     })
     return redirect(url_for('hikes'))
