@@ -10,33 +10,35 @@ var map = L.map("map", {
     zoom: 5
 });
 
+
+
 // Customised icons
 
-let scotIcon = new L.Icon({
-    iconUrl: "static/images/scotflag.png",
-    iconSize: [25, 25],
-    iconAnchor: [12, 25]
-});
+// let scotIcon = new L.Icon({
+//     iconUrl: "static/images/scotflag.png",
+//     iconSize: [25, 25],
+//     iconAnchor: [12, 25]
+// });
 
-let engIcon = new L.Icon({
-    iconUrl: "static/images/engflag.png",
-    iconSize: [25, 25],
-    iconAnchor: [12, 25]
-});
+// let engIcon = new L.Icon({
+//     iconUrl: "static/images/engflag.png",
+//     iconSize: [25, 25],
+//     iconAnchor: [12, 25]
+// });
 
-let walesIcon = new L.Icon({
-    iconUrl: "static/images/walesflag.png",
-    iconSize: [25, 25],
-    iconAnchor: [12, 25]
-});
+// let walesIcon = new L.Icon({
+//     iconUrl: "static/images/walesflag.png",
+//     iconSize: [25, 25],
+//     iconAnchor: [12, 25]
+// });
 
 // Markers for the three highest peaks in UK
 
-const myScotMarker = L.marker([56.796956, -5.003272], { icon: scotIcon }).addTo(map).bindTooltip("Ben Nevis");
+// const myScotMarker = L.marker([56.796956, -5.003272], { icon: scotIcon }).addTo(map).bindTooltip("Ben Nevis");
 
-const myEnglandMarker = L.marker([54.595270, -3.195633], { icon: engIcon }).addTo(map).bindTooltip("Scarfell Pike");
+// const myEnglandMarker = L.marker([54.595270, -3.195633], { icon: engIcon }).addTo(map).bindTooltip("Scarfell Pike");
 
-const myWalesMarker = L.marker([53.073936, -4.076236], { icon: walesIcon }).addTo(map).bindTooltip("Snowden");
+// const myWalesMarker = L.marker([53.073936, -4.076236], { icon: walesIcon }).addTo(map).bindTooltip("Snowden");
 
 
 

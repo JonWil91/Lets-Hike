@@ -36,10 +36,12 @@ body {
 
 /* Hikes */
 
-#map {
-    height: 380px;
+.maps {
+    height: 450px;
     border-radius: 20px;
 }
+
+
 
 
 /* /Hikes */

@@ -6,7 +6,7 @@
 
 <div class="container">
 	<div class="row">
-		<div id="map"></div>
+		<div id="map" class="maps"></div>
 	</div>
 </div>
 
@@ -39,15 +39,22 @@
 								<i class="material-icons">expand_more</i>
 							</div>
 						</div>
-						<div class="collapsible-body center-align">
+						<div class="collapsible-body">
+							<div class="col s12">
+								<div id="{{hike.hike_name}}" class="maps"></div>
+							</div>
 							<p>Difficulty: {{hike.hike_difficulty}}</p>
 							<p>Hike Description: {{hike.hike_description}}</p>
 							<p>Hike Duration: {{hike.hike_duration}}</p>
 							<p>Hike Distance: {{hike.hike_distance}}</p>
 							<p>Parking: {{hike.hike_parking}}</p>
+							<p>Hike Name: {{hike.hike_name}}</p>
 							<p>Disabled Access: {{hike.disabled_access}}</p>
 							<p>Hike Location: {{hike.hike_postcode}}</p>
+							<p>Attributes: {{hike.multiple_selction}}</p>
 							<p>Hike Coordinates: {{hike.hike_coordinates}}</p>
+							<div>Picture: {{hike.hike_img}}</div>
+
 						</div>
 					</li>
 				</ul>
@@ -68,21 +75,18 @@
 
 var marker = L.marker([{{hike.hike_coordinates}}]).addTo(map);
 
+
+var mapTileLayers{{hike.hike_name}} = L.tileLayer("http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
+    attribution: "Powered by <a href='https://developers.arcgis.com/terms/attribution/' target='_blank' rel='noopener'>Esri</a>"
+});
+	
+	var {{hike.hike_name}} = L.map("{{hike.hike_name}}", {
+    layers: [mapTileLayers{{hike.hike_name}}],
+    center: [{{hike.hike_coordinates}}],
+    zoom: 5
+});
+
 </script>
+
 {% endfor %}
 {% endblock %}
-
-<!-- {% for greeting in greetings %}
-  {% if greeting.author %}
-    <b>{{ greeting.author }}</b> wrote:
-  {% else %}
-    An anonymous person wrote:
-  {% endif %}
-  <blockquote>{{ greeting.content|escape }}</blockquote>
-  <script type="text/javascript">
-     var greeting_author = "{{ greeting.author }}";
-     if(greeting_author === someVariable){
-        // do other stuff here
-     }
-  </script>
-{% endfor %} https://stackoverflow.com/questions/14918486/is-it-possible-to-use-jinja-values-in-javascript-jquery-functions -->

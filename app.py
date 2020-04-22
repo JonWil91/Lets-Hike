@@ -51,8 +51,21 @@ def addhikes():
 
 @app.route('/insert_hikes', methods=['POST'])
 def insert_hikes():
-    hikes = mongo.db.hikes
-    hikes.insert_one(request.form.to_dict())
+    hike = {
+        'hike_region': request.form.get('hike_region'),
+        'county_name': request.form.get('county_name'),
+        'hike_description': request.form.get('hike_description'),
+        'hike_difficulty': request.form.get('hike_difficulty'),
+        'hike_parking': request.form.get('hike_parking'),
+        'disabled_access': request.form.get('disabled_access'),
+        'hike_postcode': request.form.get('hike_postcode'),
+        'hike_duration': request.form.get('hike_duration'),
+        'hike_distance': request.form.get('hike_distance'),
+        'hike_name': request.form.get('hike_name'),
+        'hike_coordinates': request.form.get('hike_coordinates'),
+        'multiple_selction': request.form.getlist('multiple_selction')
+    }
+    mongo.db.hikes.insert_one(hike)
     return redirect(url_for('hikes'))
 
 @app.route('/edit_hike/<hike_id>')
@@ -78,6 +91,7 @@ def update_hike(hike_id):
         'hike_postcode': request.form.get('hike_postcode'),
         'hike_duration': request.form.get('hike_duration'),
         'hike_distance': request.form.get('hike_distance'),
+        'hike_name': request.form.get('hike_name'),
         'hike_coordinates': request.form.get('hike_coordinates')
     })
     return redirect(url_for('hikes'))

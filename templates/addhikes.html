@@ -51,6 +51,11 @@
 					<textarea name="hike_parking" id="hike_parking" class="materialize-textarea"></textarea>
 					<label for="icon_telephone">Hike Parking</label>
 				</div>
+                <div class="input-field col s12 m6">
+					<i class="material-icons prefix">my_location</i>
+					<textarea name="hike_name" id="hike_name" class="materialize-textarea"></textarea>
+					<label for="icon_telephone">Hike Name</label>
+				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s12 m6">
@@ -81,27 +86,36 @@
 					<i class="material-icons prefix">add_location</i>
 					<input class="materialize-textarea" type="text" id="hike_coordinates" name="hike_coordinates"
                 pattern="^\-?[0-9]{1,3}\.[0-9]+\,\s?\-?[0-9]{1,3}\.[0-9]+$">
-					<!-- <textarea name="hike_coordinates" id="hike_coordinates" class="materialize-textarea"></textarea> -->
-					<label for="icon_telephone">Hike Coordinates</label>
+					<label for="icon_telephone">Hike Coordinates <i class="material-icons">info</i></label>
 				</div>
 			</div>
+
+			<div class="row">
+				<div class="input-field col s12 m6">
+					<i class="material-icons prefix">add_a_photo</i>
+					<input id="hike_img" name="hike_img" type="url" class="validate">
+					<label for="hike_img">Add an image link (Use small image)</label>
+				</div>
+			</div>
+
+
 			<div class="row">
 				<button class="btn waves-effect waves-light" type="submit" name="action">Add Hike
                 <i class="material-icons right">add_box</i>
              </button>
 			</div>
-			<!-- <div class="row">
+			<div class="row">
 				<div class="input-field col s12">
 					<i class="material-icons prefix">subject</i>
-					<select multiple>
+					<select multiple id="multiple_selction" name="multiple_selction">
                     <option value="" disabled selected>Select all that apply</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
+                        <option value="1">Parking</option>
+                        <option value="2">Disabled Access</option>
+                        <option value="3">Dog Friendly</option>
                 </select>
 					<label>Materialize Multiple Select</label>
 				</div>
-			</div> -->
+			</div>
 		</form>
 	</div>
 </div>
