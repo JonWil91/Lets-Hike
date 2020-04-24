@@ -47,75 +47,56 @@
 					<label for="icon_telephone">Hike Difficulty</label>
 				</div>
 				<div class="input-field col s12 m6">
-					<i class="material-icons prefix">local_parking</i>
-					<textarea name="hike_parking" id="hike_parking" class="materialize-textarea"></textarea>
-					<label for="icon_telephone">Hike Parking</label>
-				</div>
-                <div class="input-field col s12 m6">
 					<i class="material-icons prefix">my_location</i>
 					<textarea name="hike_name" id="hike_name" class="materialize-textarea"></textarea>
 					<label for="icon_telephone">Hike Name</label>
 				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s12 m6">
-					<i class="material-icons prefix">accessible</i>
-					<textarea name="disabled_access" id="disabled_access" class="materialize-textarea"></textarea>
-					<label for="icon_telephone">Disabled Access</label>
+				<div class="row">
+					<div class="input-field col s12 m6">
+						<i class="material-icons prefix">my_location</i>
+						<textarea name="hike_postcode" id="hike_postcode" class="materialize-textarea"></textarea>
+						<label for="icon_telephone">Hike Post Code</label>
+					</div>
+					<div class="input-field col s12 m6">
+						<i class="material-icons prefix">timer</i>
+						<textarea name="hike_duration" id="hike_duration" class="materialize-textarea"></textarea>
+						<label for="icon_telephone">Hike Duration</label>
+					</div>
 				</div>
-				<div class="input-field col s12 m6">
-					<i class="material-icons prefix">my_location</i>
-					<textarea name="hike_postcode" id="hike_postcode" class="materialize-textarea"></textarea>
-					<label for="icon_telephone">Hike Post Code</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s12 m6">
-					<i class="material-icons prefix">timer</i>
-					<textarea name="hike_duration" id="hike_duration" class="materialize-textarea"></textarea>
-					<label for="icon_telephone">Hike Duration</label>
-				</div>
-				<div class="input-field col s12 m6">
-					<i class="material-icons prefix">landscape</i>
-					<textarea name="hike_distance" id="hike_distance" class="materialize-textarea"></textarea>
-					<label for="icon_telephone">Hike Distance</label>
-				</div>
-			</div>
-			<div class="row">
-				<div class="input-field col s12 m6">
-					<i class="material-icons prefix">add_location</i>
-					<input class="materialize-textarea" type="text" id="hike_coordinates" name="hike_coordinates"
+				<div class="row">
+					<div class="input-field col s12 m6">
+						<i class="material-icons prefix">landscape</i>
+						<textarea name="hike_distance" id="hike_distance" class="materialize-textarea"></textarea>
+						<label for="icon_telephone">Hike Distance</label>
+					</div>
+					<div class="input-field col s12 m6">
+						<i class="material-icons prefix">add_location</i>
+						<input class="materialize-textarea" type="text" id="hike_coordinates" name="hike_coordinates"
                 pattern="^\-?[0-9]{1,3}\.[0-9]+\,\s?\-?[0-9]{1,3}\.[0-9]+$">
-					<label for="icon_telephone">Hike Coordinates <i class="material-icons">info</i></label>
+						<label for="icon_telephone">Hike Coordinates <i class="material-icons">info</i></label>
+					</div>
 				</div>
-			</div>
-
-			<div class="row">
-				<div class="input-field col s12 m6">
-					<i class="material-icons prefix">add_a_photo</i>
-					<input id="hike_img" name="hike_img" type="url" class="validate">
-					<label for="hike_img">Add an image link (Use small image)</label>
-				</div>
-			</div>
-
-
-			<div class="row">
-				<button class="btn waves-effect waves-light" type="submit" name="action">Add Hike
-                <i class="material-icons right">add_box</i>
-             </button>
-			</div>
-			<div class="row">
-				<div class="input-field col s12">
-					<i class="material-icons prefix">subject</i>
-					<select multiple id="multiple_selction" name="multiple_selction">
+				<div class="row">
+					<div class="input-field col s12">
+						<i class="material-icons prefix">subject</i>
+						<select multiple id="multiple_selction" name="multiple_selction">
                     <option value="" disabled selected>Select all that apply</option>
                         <option value="Parking">Parking</option>
                         <option value="Disabled Access">Disabled Access</option>
                         <option value="Dog Friendly">Dog Friendly</option>
                 </select>
-					<label>Hike Attributes</label>
+						<label>Hike Attributes</label>
+					</div>
 				</div>
-			</div>
+
+
+
+				<div class="row">
+					<button class="btn waves-effect waves-light" type="submit" name="action">Add Hike
+                <i class="material-icons right">add_box</i>
+             </button>
+				</div>
+
 		</form>
 	</div>
 </div>
