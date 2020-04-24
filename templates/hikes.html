@@ -40,7 +40,7 @@
 							</div>
 						</div>
                         <div class="collapsible-body col s12">
-							<div class="col s6">
+							<div class="col s12 m6">
 								<p>Difficulty: {{hike.hike_difficulty}}</p>
 								<p>Hike Description / Directions: {{hike.hike_description}}</p>
 								<p>Hike Duration: {{hike.hike_duration}}</p>
@@ -50,8 +50,6 @@
 								<p>Disabled Access: {{hike.disabled_access}}</p>
 								<p>Hike Location: {{hike.hike_postcode}}</p>
 								<p>Hike Attributes: {{hike.multiple_selction}}</p>
-								<p>Hike Coordinates: {{hike.hike_coordinates}}</p>
-								<div>Picture: {{hike.hike_img}}</div>
 							</div>
 							<div class="col s12 m6">
 								<div id="{{hike.hike_name}}" class="maps zoomed_map"></div>
@@ -101,7 +99,7 @@ var mapTileLayers{{hike.hike_name}} = L.tileLayer("http://services.arcgisonline.
 	var {{hike.hike_name}} = L.map("{{hike.hike_name}}", {
     layers: [mapTileLayers{{hike.hike_name}}],
     center: [{{hike.hike_coordinates}}],
-    zoom: 15
+    zoom: 13
 });
 
 </script>
