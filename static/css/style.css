@@ -41,7 +41,12 @@ body {
     border-radius: 20px;
 }
 
-
+.zoomed_map {
+    height: 200px;
+    padding: 20px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
 
 
 /* /Hikes */
@@ -79,3 +84,4 @@ body {
 .test {
     color: purple;
 }
+
