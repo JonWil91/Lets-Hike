@@ -91,6 +91,9 @@
 
 var marker = L.marker([{{hike.hike_coordinates}}]).addTo(map);
 
+console.log({{hike.hike_name}})
+console.log({{hike.hike_coordinates}})
+
 
 var mapTileLayers{{hike.hike_name}} = L.tileLayer("http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
     attribution: "Powered by <a href='https://developers.arcgis.com/terms/attribution/' target='_blank' rel='noopener'>Esri</a>"
@@ -101,6 +104,8 @@ var mapTileLayers{{hike.hike_name}} = L.tileLayer("http://services.arcgisonline.
     center: [{{hike.hike_coordinates}}],
     zoom: 13
 });
+
+// function(coor) {var marker = L.marker([{{coor}}]).addTo(map);}
 
 </script>
 

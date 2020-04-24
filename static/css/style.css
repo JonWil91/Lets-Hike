@@ -32,7 +32,27 @@ body {
     position: fixed;   
 }
 
+.jumbotron-header, .lead {
+    text-align: center;
+}
+
+.lead {
+    font-size: 20px;
+}
+
 /* /Home Page */
+
+/* /About Page */
+
+.about-text {
+    text-align: center;
+}
+
+.jumbotron {
+    background-color:rgba(236, 240, 241,0.1);
+}
+
+/* /About Page */
 
 /* Hikes */
 
