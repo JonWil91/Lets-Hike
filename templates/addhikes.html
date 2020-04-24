@@ -5,35 +5,6 @@
 	<div class="row input-box">
 		<form action="{{ url_for('insert_hikes') }}" method="POST" class="col s12">
 			<div class="row">
-				<div class="input-field col s12 m6">
-					<i class="material-icons prefix">poll</i>
-					<select id="county" name="county_name">
-                <option value="" disabled selected>Choose your County</option>
-                <optgroup label="England">
-                  {% for cat in engcounties %}
-                      <option value="{{cat.eng_county}}">{{cat.eng_county}}</option>
-                  {% endfor %}
-                </optgroup>
-                <optgroup label="Scotland">
-                    {% for cat in scotcounties %}
-                      <option value="{{cat.scot_county}}">{{cat.scot_county}}</option>
-                  {% endfor %}
-                </optgroup>
-                <optgroup label="Wales">
-                    {% for cat in walescounties %}
-                      <option value="{{cat.wales_county}}">{{cat.wales_county}}</option>
-                  {% endfor %}
-                </optgroup>
-            </select>
-					<label>Country / County</label>
-				</div>
-				<div class="input-field col s12 m6">
-					<i class="material-icons prefix">assignment</i>
-					<input id="hike_region" name="hike_region" type="text">
-					<label for="icon_prefix">Hike Town / City</label>
-				</div>
-			</div>
-			<div class="row">
 				<div class="input-field col s12">
 					<i class="material-icons prefix">comment</i>
 					<textarea name="hike_description" id="hike_description" class="materialize-textarea"></textarea>
