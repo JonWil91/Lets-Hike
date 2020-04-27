@@ -36,64 +36,66 @@
 			<div class="row">
 				<div class="input-field col s12">
 					<i class="material-icons prefix">comment</i>
-					<textarea name="hike_description" id="hike_description" class="materialize-textarea"></textarea>
+					<input name="hike_description" id="hike_description" type="text">
 					<label for="icon_telephone">Hike Description / Directions</label>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">grade</i>
-					<textarea name="hike_difficulty" id="hike_difficulty" class="materialize-textarea"></textarea>
+					<input name="hike_difficulty" id="hike_difficulty" type="text" value="/5">
 					<label for="icon_telephone">Hike Difficulty</label>
 				</div>
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">my_location</i>
-					<textarea pattern="[^\s]+" name="hike_name" id="hike_name" class="materialize-textarea"></textarea>
+					<input pattern="[^\s]+" name="hike_name" id="hike_name" type="text">
 					<label for="icon_telephone">Hike Name</label>
 				</div>
-				<div class="row">
-					<div class="input-field col s12 m6">
-						<i class="material-icons prefix">my_location</i>
-						<textarea name="hike_postcode" id="hike_postcode" class="materialize-textarea"></textarea>
-						<label for="icon_telephone">Hike Post Code</label>
-					</div>
-					<div class="input-field col s12 m6">
-						<i class="material-icons prefix">timer</i>
-						<textarea name="hike_duration" id="hike_duration" class="materialize-textarea"></textarea>
-						<label for="icon_telephone">Hike Duration</label>
-					</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12 m6">
+					<i class="material-icons prefix">my_location</i>
+					<input name="hike_postcode" id="hike_postcode" type="text">
+					<label for="icon_telephone">Hike Post Code</label>
 				</div>
-				<div class="row">
-					<div class="input-field col s12 m6">
-						<i class="material-icons prefix">landscape</i>
-						<textarea name="hike_distance" id="hike_distance" class="materialize-textarea"></textarea>
-						<label for="icon_telephone">Hike Distance</label>
-					</div>
-					<div class="input-field col s12 m6">
-						<i class="material-icons prefix">add_location</i>
-						<input class="materialize-textarea" type="text" id="hike_coordinates" name="hike_coordinates"
+				<div class="input-field col s12 m6">
+					<i class="material-icons prefix">timer</i>
+					<input name="hike_duration" id="hike_duration" type="text">
+					<label for="icon_telephone">Hike Duration</label>
+				</div>
+			</div>
+			<div class="row">
+				<div class="input-field col s12 m6">
+					<i class="material-icons prefix">landscape</i>
+					<input name="hike_distance" id="hike_distance" type="text" value="miles">
+					<label for="icon_telephone">Hike Distance</label>
+				</div>
+				<div class="input-field col s12 m6">
+					<i class="material-icons prefix">add_location</i>
+					<!-- <textarea name="hike_coordinates" id="hike_coordinates" class="materialize-textarea"></textarea> -->
+					<input class="materialize-textarea" type="text" id="hike_coordinates" name="hike_coordinates"
                 pattern="^\-?[0-9]{1,3}\.[0-9]+\,\s?\-?[0-9]{1,3}\.[0-9]+$">
-						<label for="icon_telephone">Hike Coordinates</label>
-					</div>
+					<label for="icon_telephone">Hike Coordinates</label>
 				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<i class="material-icons prefix">subject</i>
-						<select multiple id="multiple_selction" name="multiple_selction">
+			</div>
+			<div class="row">
+				<div class="input-field col s12">
+					<i class="material-icons prefix">subject</i>
+					<select multiple id="multiple_selction" name="multiple_selction">
                     <option value="" disabled selected>Select all that apply</option>
                         <option value="Parking">Parking</option>
                         <option value="Disabled Access">Disabled Access</option>
                         <option value="Dog Friendly">Dog Friendly</option>
                         <option value="Toilets">Toilets</option>
                 </select>
-						<label>Hike Attributes</label>
-					</div>
+					<label>Hike Attributes</label>
 				</div>
-				<div class="row">
-					<button class="btn waves-effect waves-light" type="submit" name="action">Add Hike
+			</div>
+			<div class="row">
+				<button class="btn waves-effect waves-light" type="submit" name="action">Add Hike
                 <i class="material-icons right">add_box</i>
              </button>
-				</div>
+			</div>
 		</form>
 	</div>
 </div>
