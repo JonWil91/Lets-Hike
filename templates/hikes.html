@@ -19,7 +19,7 @@
 					<li>
 						<div class="collapsible-header">
 							<div class="col s2">
-								<div class="inline_actions">
+								<div>
 									<a href="{{ url_for('edit_hike', hike_id=hike._id) }}"
 										class="waves-effect waves-light btn btn_small edit_button">Edit</a>
 									<a href="{{ url_for('delete_hike', hike_id=hike._id) }}"
@@ -28,10 +28,10 @@
 								</div>
 							</div>
 							<div class="task_header col s9 center-align">
-								<strong>Town / City: {{hike.hike_region}}</strong>
+								Town / City: <strong>{{hike.hike_region}}</strong>
 
 								<p id="county" name="county_name">
-									<strong>County: {{hike.county_name}}</strong>
+									County: <strong>{{hike.county_name}}</strong>
 								</p>
 
 							</div>
@@ -45,9 +45,7 @@
 								<p>Hike Description / Directions: {{hike.hike_description}}</p>
 								<p>Hike Duration: {{hike.hike_duration}}</p>
 								<p>Hike Distance: {{hike.hike_distance}}</p>
-								<p>Parking: {{hike.hike_parking}}</p>
 								<p>Hike Name: {{hike.hike_name}}</p>
-								<p>Disabled Access: {{hike.disabled_access}}</p>
 								<p>Hike Location: {{hike.hike_postcode}}</p>
 								<p>Hike Attributes: {{hike.multiple_selction}}</p>
 							</div>
@@ -76,7 +74,7 @@
 
     	var marker = L.marker([{{hike.hike_coordinates}}]).addTo(map);
 
-        // console.log({{hike.hike_name}}) // undefined for each
+        console.log({{hike.hike_name}}) // undefined for each
         // console.log({{hike}}) // throws an error in console, Unexpected token '&'
         console.log({{hike.hike_coordinates}}) // working just fine though
 
