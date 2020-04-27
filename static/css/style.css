@@ -32,6 +32,10 @@ body {
     position: fixed;   
 }
 
+.jumbotron {
+    background-color: transparent !important;
+}
+
 .jumbotron-header, .lead {
     text-align: center;
 }
@@ -46,6 +50,7 @@ body {
 
 .about-text {
     text-align: center;
+    font-size: 20px;
 }
 
 .jumbotron {
@@ -71,7 +76,7 @@ body {
 }
 
 .delete_button {
-    background-color: #3bb7ff;
+    background-color: #0980c5;
 }
 
 
