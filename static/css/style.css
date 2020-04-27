@@ -3,6 +3,13 @@ body {
     background-color: #e3eae4;
 }
 
+.title-text {
+    text-align: center;
+    padding: 20px;
+    color: #5d1a1a;
+    font-size: 70px;
+}
+
  /* Navbar */
 
 .navbar {
@@ -34,14 +41,16 @@ body {
 
 .jumbotron {
     background-color: transparent !important;
+    text-align: center
 }
 
-.jumbotron-header, .lead {
-    text-align: center;
+.jumbotron-header {
+    font-size: 100px;
+    color: #5d1a1a;
 }
 
 .lead {
-    font-size: 20px;
+    font-size: 25px;
 }
 
 /* /Home Page */

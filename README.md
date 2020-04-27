@@ -52,6 +52,10 @@ The input form for the add hikes is within a green colored border box, in keepin
 
 The Edit hikes follows the same layout format as the add hikes page to keep consistency. The selection choices are saved in case users only wish to amend one field. The Edit Hike button updates the hike data and reroutes the user to the hikes page.
 
+### Colours Used:
+
+Throughout the website there is a simple colour scheme, focused on the colour green as this fits the theme of the outdoors, with blue acting as a contrast on the main map and potential individual maps.
+
 ### Additional features to be implemented:
 
 * I would like to add a feature to filter the hike selection by county name to narrow down the search field. I would like to do this for both hike data and the map markers.

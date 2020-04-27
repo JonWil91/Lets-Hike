@@ -1,6 +1,6 @@
 {% extends 'base.html'%} {% block content %}
 
-<h1>Edit Hike</h1>
+<h2 class="title-text">Edit Hike</h2>
 <div class="container">
 	<div class="row input-box">
 		<form action="{{ url_for('update_hike', hike_id=hike._id) }}" method="POST" class="col s12">
