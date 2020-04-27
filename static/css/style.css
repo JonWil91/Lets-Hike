@@ -79,6 +79,10 @@ body {
     background-color: #0980c5;
 }
 
+.delete_button:hover {
+    background-color: red;
+}
+
 
 /* /Hikes */
 
