@@ -41,12 +41,12 @@ body {
 
 .jumbotron {
     background-color: transparent !important;
-    text-align: center
+    text-align: center;
+    color: #5d1a1a;
 }
 
 .jumbotron-header {
     font-size: 100px;
-    color: #5d1a1a;
 }
 
 .lead {
