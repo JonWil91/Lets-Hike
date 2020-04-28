@@ -56,10 +56,11 @@
 									</ul>
 								</p>
 							</div>
-							<div class="col s12 m6">
+							
+						</div>
+                        <div class="col s12 m6">
 								<div id="{{hike.hike_name}}" class="maps zoomed_map"></div>
 							</div>
-						</div>
 					</li>
 				</ul>
 			</div>
@@ -73,6 +74,11 @@
 {% block js %}
 
 <script>
+
+
+
+
+
 	{% for hike in hikes %}
 
 
@@ -81,11 +87,6 @@
         console.log({{hike.hike_name}}) // undefined for each
         // console.log({{hike}}) // throws an error in console, Unexpected token '&'
         console.log({{hike.hike_coordinates}}) // working just fine though
-
-        // console.log({{hike.multiple_selction}})
-
-        // {$toString: {{hike.multiple_selction}}}
-
 
         var mapTileLayers{{hike.hike_name}} = L.tileLayer("http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
             attribution: "Powered by <a href='https://developers.arcgis.com/terms/attribution/' target='_blank' rel='noopener'>Esri</a>"
