@@ -45,13 +45,16 @@
 								<p>Hike Distance: {{hike.hike_distance}}</p>
 								<p>Hike Name: {{hike.hike_name}}</p>
 								<p>Hike Location: {{hike.hike_postcode}}</p>
-								<p>Hike Attributes: 
-                                    <ul>
-                                    {% for attribute in hike.multiple_selction %}
-                                        <li>{{ attribute }}</li>
-                                    {% endfor %}
-                                    </ul>
-                                </p>
+								<p>Hike Attributes:
+									<ul class="collection with-header">
+										{% for attribute in hike.multiple_selction %}
+										<li class="collection-item">
+											<div>
+												{{ attribute }}<img src="{{ url_for('static', filename='images/'+attribute|replace(' ', '-')|lower+'.png') }}" class="secondary-content"></div>
+										</li>
+										{% endfor %}
+									</ul>
+								</p>
 							</div>
 							<div class="col s12 m6">
 								<div id="{{hike.hike_name}}" class="maps zoomed_map"></div>
@@ -70,7 +73,6 @@
 {% block js %}
 
 <script>
-
 	{% for hike in hikes %}
 
 
@@ -102,4 +104,4 @@
 
 {% endblock %}
 
-        <!-- function(coor) {var marker = L.marker([{{coor}}]).addTo(map);} -->
+<!-- function(coor) {var marker = L.marker([{{coor}}]).addTo(map);} -->
