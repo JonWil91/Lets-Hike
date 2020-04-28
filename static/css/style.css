@@ -92,6 +92,10 @@ body {
     background-color: red;
 }
 
+.collection-with-header {
+    background-color: #fafafa;
+}
+
 .secondary-content {
     height: 20px;
 }
