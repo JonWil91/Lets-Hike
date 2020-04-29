@@ -65,7 +65,8 @@ def insert_hikes():
         'hike_distance': request.form.get('hike_distance'),
         'hike_name': request.form.get('hike_name'),
         'hike_coordinates': request.form.get('hike_coordinates'),
-        'multiple_selction': request.form.getlist('multiple_selction')
+        'multiple_selction': request.form.getlist('multiple_selction'),
+        'img_url': request.form.get('img_url')
     }
     mongo.db.hikes.insert_one(hike)
     return redirect(url_for('hikes'))

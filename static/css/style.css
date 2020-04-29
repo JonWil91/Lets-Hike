@@ -109,6 +109,11 @@ body {
     background-color: #fafafa;
 }
 
+.user-image {
+    height: 50px;
+    width: 50px;
+}
+
 /* /Hikes */
 
 /* Add Hikes */
