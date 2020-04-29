@@ -108,8 +108,8 @@ def delete_hike(hike_id):
 
 @app.route('/hikes/view/<hike_id>')
 def view_hike(hike_id):
-    the_hike =  mongo.db.hikes.find_one({"_id": ObjectId(hike_id)})
-    return render_template('viewhike.html')
+    the_hike = mongo.db.hikes.find_one({"_id": ObjectId(hike_id)})
+    return render_template('viewhike.html', hike=the_hike)
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
