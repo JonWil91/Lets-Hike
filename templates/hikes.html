@@ -28,9 +28,9 @@
 								</div>
 							</div>
 							<div class="task_header col s9 center-align">
-								Town / City: <strong>{{hike.hike_region}}</strong>
+								Town / City: {{hike.hike_region}}
 								<p id="county" name="county_name">
-									County: <strong>{{hike.county_name}}</strong>
+									County: {{hike.county_name}}
 								</p>
 							</div>
 							<div class="col s1">
@@ -46,7 +46,7 @@
 								<p>Hike Name: {{hike.hike_name}}</p>
 								<p>Hike Location: {{hike.hike_postcode}}</p>
 								<p>Hike Attributes:
-									<ul class="collection with-header">
+									<ul class="collection">
 										{% for attribute in hike.multiple_selction %}
 										<li class="collection-item">
 											<div>
@@ -55,12 +55,14 @@
 										{% endfor %}
 									</ul>
 								</p>
+								<div class="col s12 m6">
+									<img src = "{{hike.img_url}}">
+								</div>
 							</div>
-							
 						</div>
-                        <div class="col s12 m6">
-								<div id="{{hike.hike_name}}" class="maps zoomed_map"></div>
-							</div>
+						<div class="col s12">
+							<div id="{{hike.hike_name}}" class="maps zoomed_map"></div>
+						</div>
 					</li>
 				</ul>
 			</div>
@@ -74,19 +76,12 @@
 {% block js %}
 
 <script>
-
-
-
-
-
 	{% for hike in hikes %}
 
 
     	var marker = L.marker([{{hike.hike_coordinates}}]).addTo(map);
 
-        console.log({{hike.hike_name}}) // undefined for each
-        // console.log({{hike}}) // throws an error in console, Unexpected token '&'
-        console.log({{hike.hike_coordinates}}) // working just fine though
+       
 
         var mapTileLayers{{hike.hike_name}} = L.tileLayer("http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
             attribution: "Powered by <a href='https://developers.arcgis.com/terms/attribution/' target='_blank' rel='noopener'>Esri</a>"
