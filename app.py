@@ -106,9 +106,10 @@ def delete_hike(hike_id):
     mongo.db.hikes.remove({'_id': ObjectId(hike_id)})
     return redirect(url_for('hikes'))
 
-@app.route('/contact')
-def contact():
-    return render_template('contact.html')
+@app.route('/hikes/view/<hike_id>')
+def view_hike(hike_id):
+    the_hike =  mongo.db.hikes.find_one({"_id": ObjectId(hike_id)})
+    return render_template('viewhike.html')
 
 if __name__ == '__main__':
     app.run(host=os.environ.get('IP'),
