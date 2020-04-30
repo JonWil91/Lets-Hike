@@ -2,50 +2,50 @@
 {% block content %}
 
 
-<h2 class="title-text">View Hike</h2>
+<h2 class="title-text">{{hike.hike_name}} Hike</h2>
 
 
 <div class="container">
-	<ul>
-
-		<div class="row input-box">
-			<div class="col s12">
-				<ul>
-					<li>
-						<div class="col s12">
-							<div class="col s12 m6">
-								<p>Town / City: {{hike.hike_region}}</p>
-								<p id="county" name="county_name">
-									County: {{hike.county_name}}
-								</p>
-								<p>Difficulty: {{hike.hike_difficulty}}</p>
-								<p>Hike Description / Directions: {{hike.hike_description}}</p>
-								<p>Hike Duration: {{hike.hike_duration}}</p>
-								<p>Hike Distance: {{hike.hike_distance}}</p>
-								<p>Hike Name: {{hike.hike_name}}</p>
-								<p>Hike Location: {{hike.hike_postcode}}</p>
-								<p>Hike Attributes:
-									<ul class="collection">
-										{% for attribute in hike.multiple_selction %}
-										<li class="collection-item">
-											<div>
-												{{ attribute }}<img src="{{ url_for('static', filename='images/'+attribute|replace(' ', '-')|lower+'.png') }}" class="secondary-content"></div>
-										</li>
-										{% endfor %}
-									</ul>
-								</p>
-							</div>
-
+	<div class="row input-box">
+		<div class="col s12">
+			<ul>
+				<li>
+					<div class="col s12">
+						<div class="col s12 m6">
+							<p>Town / City: {{hike.hike_region}}</p>
+							<p id="county" name="county_name">
+								County: {{hike.county_name}}
+							</p>
+							<p>Difficulty: {{hike.hike_difficulty}}</p>
+							<p>Hike Description / Directions: {{hike.hike_description}}</p>
+							<p>Hike Duration: {{hike.hike_duration}}</p>
+							<p>Hike Distance: {{hike.hike_distance}}</p>
+							<p>Hike Location: {{hike.hike_postcode}}</p>
 						</div>
-						<div class="row">
-							<div class="col s12 m6 user-image">
-								<img src="{{hike.img_url}}" alt="user selected hike image">
+                        <p>Hike Attributes:
+								<ul class="collection">
+									{% for attribute in hike.multiple_selction %}
+									<li class="collection-item">
+										<div>
+											{{ attribute }}<img src="{{ url_for('static', filename='images/'+attribute|replace(' ', '-')|lower+'.png') }}" class="secondary-content"></div>
+									</li>
+									{% endfor %}
+								</ul>
+							</p>
+					</div>
+				</li>
+			</ul>
+
+			<div class="row">
+				<div class="col s12 m6 user-image">
+					<img src="{{hike.img_url}}" alt="user selected hike image">
 								</div>
-								<div class="col s12 m6">
-									<div id="{{hike.hike_name}}" class="maps zoomed_map"></div>
-								</div>
-							</div>
-					</li>
+					<div class="col s12 m6">
+						<div id="{{hike.hike_name}}" class="maps zoomed_map"></div>
+					</div>
+				</div>
+
+				<div class="row">
 					<div class="col s2">
 						<div>
 							<a href="{{ url_for('edit_hike', hike_id=hike._id) }}"
@@ -55,19 +55,19 @@
 								class="waves-effect waves-light btn btn_small delete_button">Delete</a>
 						</div>
 					</div>
-				</ul>
+				</div>
+
+
 			</div>
 		</div>
+	</div>
 
-	</ul>
-</div>
+	{% endblock %}
 
-{% endblock %}
+	{% block js %}
 
-{% block js %}
-
-<script>
-	var mapTileLayers{{hike.hike_name}} = L.tileLayer("http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
+	<script>
+		var mapTileLayers{{hike.hike_name}} = L.tileLayer("http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
             attribution: "Powered by <a href='https://developers.arcgis.com/terms/attribution/' target='_blank' rel='noopener'>Esri</a>"
         });
 	
@@ -77,9 +77,6 @@
             center: [{{hike.hike_coordinates}}],
             zoom: 13
         });
+	</script>
 
-    
-
-</script>
-
-{% endblock %}
+	{% endblock %}
