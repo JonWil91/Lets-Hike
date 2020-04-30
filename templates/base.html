@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700i&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:200,400,500,700i&display=swap" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" type="text/css">
 	<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
@@ -19,7 +19,7 @@
 		<nav>
 			<div class="nav-wrapper navbar">
 				<a href="{{url_for('home')}}" class="brand-logo">Let's Hike</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+				<a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
 				<ul id="nav-mobile" class="right hide-on-med-and-down">
 					<li><a href="{{url_for('home')}}">Home</a></li>
 					<li><a href="{{url_for('about')}}">About</a></li>
@@ -42,7 +42,7 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-	<script src="static/js/style.js"></script>
+	<script src="{{ url_for('static', filename='js/style.js') }}"></script>
 	<script type="text/javascript">
 		$(document).ready(function(){
         $('.collapsible').collapsible();
