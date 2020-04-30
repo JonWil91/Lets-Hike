@@ -87,6 +87,10 @@ body {
     background-color: red;
 }
 
+.view_button {
+    background-color: #774c0b;
+}
+
 .collection-with-header {
     background-color: #fafafa;
 }
