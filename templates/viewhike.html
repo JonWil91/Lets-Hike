@@ -12,26 +12,26 @@
 				<li>
 					<div class="col s12">
 						<div class="col s12 m6">
-							<p>Town / City: {{hike.hike_region}}</p>
+							<p><strong>Town / City:</strong> {{hike.hike_region}}</p>
 							<p id="county" name="county_name">
-								County: {{hike.county_name}}
+								<strong>County:</strong> {{hike.county_name}}
 							</p>
-							<p>Difficulty: {{hike.hike_difficulty}}</p>
-							<p>Hike Description / Directions: {{hike.hike_description}}</p>
-							<p>Hike Duration: {{hike.hike_duration}}</p>
-							<p>Hike Distance: {{hike.hike_distance}}</p>
-							<p>Hike Location: {{hike.hike_postcode}}</p>
+							<p><strong>Difficulty:</strong> {{hike.hike_difficulty}}</p>
+							<p><strong>Hike Description</strong> / Directions: {{hike.hike_description}}</p>
+							<p><strong>Hike Duration:</strong> {{hike.hike_duration}}</p>
+							<p><strong>Hike Distance:</strong> {{hike.hike_distance}}</p>
+							<p><strong>Hike Location:</strong> {{hike.hike_postcode}}</p>
 						</div>
-                        <p>Hike Attributes:
-								<ul class="collection">
-									{% for attribute in hike.multiple_selction %}
-									<li class="collection-item">
-										<div>
-											{{ attribute }}<img src="{{ url_for('static', filename='images/'+attribute|replace(' ', '-')|lower+'.png') }}" class="secondary-content"></div>
-									</li>
-									{% endfor %}
-								</ul>
-							</p>
+						<p><strong>Hike Attributes:</strong>
+							<ul class="collection">
+								{% for attribute in hike.multiple_selction %}
+								<li class="collection-item">
+									<div>
+										{{ attribute }}<img src="{{ url_for('static', filename='images/'+attribute|replace(' ', '-')|lower+'.png') }}" class="secondary-content"></div>
+								</li>
+								{% endfor %}
+							</ul>
+						</p>
 					</div>
 				</li>
 			</ul>
