@@ -39,24 +39,7 @@
 							</div>
 						</div>
 						<div class="collapsible-body col s12">
-							<div class="col s12 m6">
-								<p>Difficulty: {{hike.hike_difficulty}}</p>
-								<p>Hike Description / Directions: {{hike.hike_description}}</p>
-								<p>Hike Duration: {{hike.hike_duration}}</p>
-								<p>Hike Distance: {{hike.hike_distance}}</p>
-								<p>Hike Name: {{hike.hike_name}}</p>
-								<p>Hike Location: {{hike.hike_postcode}}</p>
-								<p>Hike Attributes:
-									<ul class="collection">
-										{% for attribute in hike.multiple_selction %}
-										<li class="collection-item">
-											<div>
-												{{ attribute }}<img src="{{ url_for('static', filename='images/'+attribute|replace(' ', '-')|lower+'.png') }}" class="secondary-content"></div>
-										</li>
-										{% endfor %}
-									</ul>
-								</p>
-							</div>
+							
 							
 							</div>
 							
