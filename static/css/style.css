@@ -91,6 +91,10 @@ body {
     background-color: #774c0b;
 }
 
+.view_button:hover {
+    background-color: purple;
+}
+
 .collection-with-header {
     background-color: #fafafa;
 }
