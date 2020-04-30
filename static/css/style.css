@@ -100,7 +100,8 @@ body {
 }
 
 .secondary-content {
-    height: 20px;
+    height: 30px;
+    padding-bottom: 1px;
 }
 
 .collection {
