@@ -92,7 +92,7 @@ body {
 }
 
 .view_button:hover {
-    background-color: purple;
+    background-color: #ce9b4f;
 }
 
 .collection-with-header {
@@ -107,6 +107,9 @@ body {
     background-color: #fafafa;
 }
 
+.hikes-summary {
+    background-color: #fafafa;
+}
 
 
 /* /Hikes */
@@ -123,6 +126,11 @@ body {
 
 .user-image {
     height: 200px;
+    margin: auto;
+}
+
+.collection .collection-item {
+    background-color: #fafafa;
 }
 
 /* /View Hike */

@@ -40,6 +40,7 @@
 				<div class="col s12 m6 user-image">
 					<img src="{{hike.img_url}}" alt="user selected hike image">
 								</div>
+
 					<div class="col s12 m6">
 						<div id="{{hike.hike_name}}" class="maps zoomed_map"></div>
 					</div>
@@ -75,8 +76,9 @@
         hikeName = L.map("{{hike.hike_name}}", {
             layers: [mapTileLayers{{hike.hike_name}}],
             center: [{{hike.hike_coordinates}}],
-            zoom: 13
+            zoom: 14
         });
 	</script>
 
 	{% endblock %}
+

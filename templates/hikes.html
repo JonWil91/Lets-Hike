@@ -13,11 +13,11 @@
 <div class="container">
 	<ul>
 		{% for hike in hikes %}
-		<div class="row">
+		<div class="row hikes-summary">
 			<div class="col s12">
 				<ul>
 					<li>
-						<div class="collapsible-header">
+						<div>
 							<div class="col s2">
 								<div>
 									<a href="{{ url_for('edit_hike', hike_id=hike._id) }}"
@@ -35,7 +35,7 @@
 								<p id="county" name="county_name">
 									<strong>County:</strong> {{hike.county_name}}
 								</p>
-								<p><strong>Hike Name:<strong> {{hike.hike_name}}</p>
+								<p><strong>Hike Name:</strong> {{hike.hike_name}}</p>
 							</div>
 							
 						</div>
