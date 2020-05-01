@@ -13,7 +13,7 @@ Users will be able to implement the CRUD system in order to add, view, edit and 
 
 ## User stories:
 
-As a user I would:
+As a user on a mobile/tablet or desktop device I would:
 
 * Want to have a clear idea of the website purpose after visiting the home page
 * Want to click the About button in the navbar and visit the About page

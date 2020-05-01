@@ -1,3 +1,5 @@
+/* Multiple Pages */
+
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #e3eae4;
@@ -7,8 +9,18 @@ body {
     text-align: center;
     padding: 20px;
     color: #a05709;
-    font-size: 4em;
+    font-size: 2.5em;
 }
+
+.btn_small {
+    height: 24px;
+    width: 75px;
+    line-height: 24px;
+    margin: 5px 5px;
+    padding: 0 0.5em;
+}
+
+/* /Multiple Pages */
 
  /* Navbar */
 
@@ -56,15 +68,11 @@ body {
 
 /* /Home Page */
 
-/* /About Page */
+/* About Page */
 
 .about-text {
     text-align: center;
     font-size: 20px;
-}
-
-.jumbotron {
-    background-color:rgba(236, 240, 241,0.1);
 }
 
 /* /About Page */
@@ -74,6 +82,10 @@ body {
 .maps {
     height: 450px;
     border-radius: 20px;
+}
+
+.hike-summary-text {
+    margin-top: 5px;
 }
 
 .edit_button {
@@ -95,8 +107,16 @@ body {
 .view_button:hover {
     background-color: #ce9b4f;
 }
+.hikes-summary {
+    background-color: #fafafa;
+    padding: 2px;
+}
 
-.collection-with-header {
+/* /Hikes */
+
+/* View Hike */
+
+.collection {
     background-color: #fafafa;
 }
 
@@ -104,23 +124,6 @@ body {
     height: 30px;
     padding-bottom: 1px;
 }
-
-.collection {
-    background-color: #fafafa;
-}
-
-.hikes-summary {
-    background-color: #fafafa;
-}
-
-.row .col {
-    padding: 5px;;
-}
-
-
-/* /Hikes */
-
-/* View Hike */
 
 .zoomed_map, .user-image {
     height: 200px;
@@ -131,8 +134,6 @@ body {
     width: 80%;
     border-radius: 20px;
 }
-
-
 
 .collection .collection-item {
     background-color: #fafafa;
@@ -162,16 +163,7 @@ body {
 
 /* /Add Hikes */
 
-.btn_small {
-    height: 24px;
-    width: 75px;
-    line-height: 24px;
-    margin: 5px 5px;
-    padding: 0 0.5em;
-}
 
-.task_header {
-    margin-top: 5px;
-}
+
 
 
