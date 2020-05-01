@@ -6,8 +6,8 @@ body {
 .title-text {
     text-align: center;
     padding: 20px;
-    color: #5d1a1a;
-    font-size: 2em;
+    color: #a05709;
+    font-size: 4em;
 }
 
  /* Navbar */
@@ -85,11 +85,11 @@ body {
 }
 
 .delete_button:hover {
-    background-color: red;
+    background-color: #f70b0b;
 }
 
 .view_button {
-    background-color: #774c0b;
+    background-color: #a05709;
 }
 
 .view_button:hover {
