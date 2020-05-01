@@ -16,7 +16,7 @@ body {
     height: 24px;
     width: 75px;
     line-height: 24px;
-    margin: 5px 5px;
+    margin: 5px 0;
     padding: 0 0.5em;
 }
 
@@ -109,8 +109,9 @@ body {
 }
 .hikes-summary {
     background-color: #fafafa;
-    padding: 2px;
+    padding: 1px;
 }
+
 
 /* /Hikes */
 
