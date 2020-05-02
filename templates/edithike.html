@@ -3,8 +3,9 @@
 <h2 class="title-text">Edit Hike</h2>
 <div class="container">
 	<div class="row input-box">
-    <p>Fill out the information below and click the Edit Hike button for your data to be amended.
-			Information on how to add coordinates can be found on the <a href="{{url_for('about')}}">About</a> page. Please note all '*' fields are required.
+		<p>Fill out the information below and click the Edit Hike button for your data to be amended.
+			Information on how to add coordinates can be found on the <a href="{{url_for('about')}}">About</a> page.
+			Please note all '*' fields are required.
 		</p>
 		<form action="{{ url_for('update_hike', hike_id=hike._id) }}" method="POST" class="col s12">
 			<div class="row">
@@ -97,10 +98,29 @@
 					<i class="material-icons prefix">subject</i>
 					<select multiple id="multiple_selction" name="multiple_selction">
                     <option value="" disabled selected>Select all that apply</option>
-                        <option value="Parking">Parking</option>
-                        <option value="Disabled Access">Disabled Access</option>
-                        <option value="Dog Friendly">Dog Friendly</option>
-                        <option value="Toilets">Toilets</option>
+                        {% if "Parking" in hike.multiple_selction %}
+                            <option value="Parking" selected>Parking</option>
+                        {% else %}
+                            <option value="Parking">Parking</option>
+                        {% endif %}
+                        
+                        {% if "Disabled Access" in hike.multiple_selction %}
+                            <option value="Disabled Access" selected>Disabled Access</option>
+                        {% else %}
+                            <option value="Disabled Access">Disabled Access</option>
+                        {% endif %}
+                        
+                        {% if "Dog Friendly" in hike.multiple_selction %}
+                            <option value="Dog Friendly" selected>Dog Friendly</option>
+                        {% else %}
+                            <option value="Dog Friendly">Dog Friendly</option>
+                        {% endif %}
+                        
+                        {% if "Toilets" in hike.multiple_selction %}
+                            <option value="Toilets" selected>Toilets</option>
+                        {% else %}
+                            <option value="Toilets">Toilets</option>
+                        {% endif %}
                 </select>
 					<label>Hike Attributes</label>
 				</div>
