@@ -166,6 +166,10 @@ body {
     padding: 20px;
 }
 
+#difficulty-slider {
+    padding-bottom: 15px;
+}
+
 /* /Add Hikes */
 
  /* Media Queries */
@@ -177,3 +181,8 @@ body {
 }
 
  /* /Media Queries */
+
+.england {
+    color: red;
+    background-color: red;
+}

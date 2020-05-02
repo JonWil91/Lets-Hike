@@ -58,9 +58,13 @@
 			</div>
 			<div class="row">
 				<div class="input-field col s12 m6">
-					<i class="material-icons prefix">grade</i>
-					<input min="0" max="5" name="hike_difficulty" id="hike_difficulty" type="number" value="{{hike.hike_difficulty}}">
-					<label for="icon_telephone">Hike Difficulty (0 - 5)</label>
+					<div id="difficulty-slider">
+						<i class="material-icons prefix">grade</i>
+						<label>Difficulty</label>
+					</div>
+					<p class="range-field">
+						<input type="range" id="test5" min="0" max="5" value="{{hike.hike_difficulty}}"/>
+                    </p>
 				</div>
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">my_location</i>

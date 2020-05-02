@@ -4,7 +4,8 @@
 <div class="container">
 	<div class="row input-box">
 		<p>Fill out the information below and click the Add Hike button for your data to be added onto the Hikes page.
-			Information on how to add coordinates can be found on the <a href="{{url_for('about')}}">About</a> page. Please note all '*' fields are required.
+			Information on how to add coordinates can be found on the <a href="{{url_for('about')}}">About</a> page.
+			Please note all '*' fields are required.
 		</p>
 		<form action="{{ url_for('insert_hikes') }}" method="POST" class="col s12">
 			<div class="row">
@@ -12,9 +13,9 @@
 					<i class="material-icons prefix">poll</i>
 					<select id="county" name="county_name" required>
                 <option value="" disabled selected>Choose your County*</option>
-                <optgroup label="England">
+                <optgroup label="England" class="england">
                   {% for cat in engcounties|sort(attribute="eng_county") %}
-                      <option value="{{cat.eng_county}}">{{cat.eng_county}}</option>
+                      <option value="{{cat.eng_county}}" class="red">{{cat.eng_county}}</option>
                   {% endfor %}
                 </optgroup>
                 <optgroup label="Scotland">
@@ -45,9 +46,13 @@
 			</div>
 			<div class="row">
 				<div class="input-field col s12 m6">
-					<i class="material-icons prefix">grade</i>
-					<input min="0" max="5" name="hike_difficulty" id="hike_difficulty" type="number">
-					<label for="icon_telephone">Hike Difficulty (0 - 5)</label>
+					<div id="difficulty-slider">
+						<i class="material-icons prefix">grade</i>
+						<label>Difficulty</label>
+					</div>
+					<p class="range-field">
+						<input type="range" id="test5" min="0" max="5" />
+                    </p>
 				</div>
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">my_location</i>
@@ -98,6 +103,10 @@
 					<label>Image URL</label>
 				</div>
 			</div>
+
+
+
+
 			<div class="row">
 				<button class="btn waves-effect waves-light" type="submit" name="action">Add Hike
                 <i class="material-icons right">add_box</i>
