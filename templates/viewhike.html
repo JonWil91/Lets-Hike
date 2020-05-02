@@ -2,7 +2,7 @@
 {% block content %}
 
 
-<h2 class="title-text">{{hike.hike_name}} Hike</h2>
+<h2 class="title-text">{{hike.hike_name|replace('_', ' ')}} Hike</h2>
 
 
 <div class="container center-align">
@@ -63,7 +63,7 @@
 		</div>
 
 				<div class="col s12 m6">
-					<div id="{{hike.hike_name}}" class="maps zoomed_map"></div>
+					<div id="{{hike.hike_name}}" class="zoomed_map"></div>
 				</div>
 			</div>
 
@@ -91,21 +91,25 @@
 	{% block js %}
 
 	<script>
-        var hikeName = {{hike.hike_name|replace(" ", "_")}};
+        var hikeName = {{hike.hike_name|replace(' ', '_')}};
+
+        console.log('test')
+
         
-		var mapTileLayers = L.tileLayer("http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
+		var mapTileLayers{{hike.hike_name|replace(' ', '_')}} = L.tileLayer("http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
             attribution: "Powered by <a href='https://developers.arcgis.com/terms/attribution/' target='_blank' rel='noopener'>Esri</a>"
         });
-	
        
-        hikeName = L.map("{{hike.hike_name}}", {
-            layers: [mapTileLayers],
+        hikeName = L.map("{{hike.hike_name|replace(' ', '_')}}", {
+            layers: [mapTileLayers{{hike.hike_name|replace(' ', '_')}}],
             center: [{{hike.hike_coordinates}}],
             zoom: 12
         });
 
-        var zoom_marker = L.marker([{{hike.hike_coordinates}}]).addTo(hikeName).bindPopup('{{hike.hike_name}}');
+        var zoom_marker = L.marker([{{hike.hike_coordinates}}]).addTo(hikeName);
 
 	</script>
 
 	{% endblock %}
+
+        <!-- var hikeName = {{hike.hike_name|replace(' ', '_')}}; -->

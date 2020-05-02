@@ -39,7 +39,7 @@
 								<p id="county" name="county_name">
 									<strong>County:</strong> {{hike.county_name}}
 								</p>
-								<p><strong>Hike Name:</strong> {{hike.hike_name}}</p>
+								<p><strong>Hike Name:</strong> {{hike.hike_name|replace('_', ' ')}}</p>
 							</div>
 						</div>
 					</li>
@@ -57,7 +57,7 @@
 <script>
 	{% for hike in hikes %}
 
-        var marker = L.marker([{{hike.hike_coordinates}}]).addTo(map).bindPopup('{{hike.hike_name}}');
+        var marker = L.marker([{{hike.hike_coordinates}}]).addTo(map).bindPopup('{{hike.hike_name|replace('_', ' ')}}');
         
     {% endfor %}
 
