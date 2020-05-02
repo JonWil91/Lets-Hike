@@ -13,7 +13,7 @@
 					<select id="county" name="county_name" required>
                 <option value="" disabled selected>Choose your County*</option>
                 <optgroup label="England">
-                  {% for cat in engcounties %}
+                  {% for cat in engcounties|sort(attribute="eng_county") %}
                       <option value="{{cat.eng_county}}">{{cat.eng_county}}</option>
                   {% endfor %}
                 </optgroup>
@@ -23,7 +23,7 @@
                   {% endfor %}
                 </optgroup>
                 <optgroup label="Wales">
-                    {% for cat in walescounties %}
+                    {% for cat in walescounties|sort(attribute="wales_county") %}
                       <option value="{{cat.wales_county}}">{{cat.wales_county}}</option>
                   {% endfor %}
                 </optgroup>
@@ -51,8 +51,8 @@
 				</div>
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">my_location</i>
-					<input pattern="[^\s]+" maxlength="17" name="hike_name" id="hike_name" type="text" placeholder="Please use underscores" required>
-					<label for="icon_telephone">Hike Name (no spaces, max 17 characters)*</label>
+					<input maxlength="17" name="hike_name" id="hike_name" type="text" required>
+					<label for="icon_telephone">Hike Name (max 17 characters)*</label>
 				</div>
 			</div>
 			<div class="row">

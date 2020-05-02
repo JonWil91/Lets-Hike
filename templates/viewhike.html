@@ -24,7 +24,7 @@
 				{% if hike.hike_duration %}
 				<p><strong>Hike Duration:</strong> {{hike.hike_duration}}</p>
 				{% else %}
-				<p><strong>Hike Description / Directions:</strong> {{hike.hike_description}}</p>
+				<p><strong>Hike Duration:</strong> Unknown</p>
 				{% endif %}
 
 				{% if hike.hike_distance %}
@@ -91,18 +91,20 @@
 	{% block js %}
 
 	<script>
-		var mapTileLayers{{hike.hike_name}} = L.tileLayer("http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
+        var hikeName = {{hike.hike_name|replace(" ", "_")}};
+        
+		var mapTileLayers = L.tileLayer("http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
             attribution: "Powered by <a href='https://developers.arcgis.com/terms/attribution/' target='_blank' rel='noopener'>Esri</a>"
         });
 	
-        var hikeName = {{hike.hike_name}};
+       
         hikeName = L.map("{{hike.hike_name}}", {
-            layers: [mapTileLayers{{hike.hike_name}}],
+            layers: [mapTileLayers],
             center: [{{hike.hike_coordinates}}],
-            zoom: 14
+            zoom: 12
         });
 
-        var zoommarker = L.marker([{{hike.hike_coordinates}}]).addTo(hikeName).bindPopup('{{hike.hike_name}}');
+        var zoom_marker = L.marker([{{hike.hike_coordinates}}]).addTo(hikeName).bindPopup('{{hike.hike_name}}');
 
 	</script>
 

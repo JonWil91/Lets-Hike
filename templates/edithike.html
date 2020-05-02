@@ -13,7 +13,7 @@
 					<select id="county" name="county_name" required>
                 <option value="" disabled>Choose your option*</option>
                 <optgroup label="England">
-                  {% for cat in engcounties %}
+                  {% for cat in engcounties|sort(attribute="eng_county") %}
                     {% if cat.eng_county == hike.county_name %}
                         <option value="{{cat.eng_county}}" selected>{{hike.county_name}}</option>
                     {% else %}
@@ -22,7 +22,7 @@
                   {% endfor %}
                 </optgroup>
                 <optgroup label="Scotland">
-                    {% for cat in scotcounties %}
+                    {% for cat in scotcounties|sort(attribute="scot_county") %}
                         {% if cat.scot_county == hike.county_name %}
                             <option value="{{cat.scot_county}}" selected>{{hike.county_name}}</option>
                         {% else %}
@@ -31,7 +31,7 @@
                   {% endfor %}
                 </optgroup>
                 <optgroup label="Wales">
-                    {% for cat in walescounties %}
+                    {% for cat in walescounties|sort(attribute="wales_county") %}
                         {% if cat.wales_county == hike.county_name %}
                             <option value="{{cat.wales_county}}" selected>{{hike.county_name}}</option>
                         {% else %}
@@ -64,7 +64,7 @@
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">my_location</i>
 					<input name="hike_name" maxlength="17" id="hike_name" type="text" value="{{hike.hike_name}}" required>
-					<label for="icon_telephone">Hike Name (no spaces, max 17 characters)*</label>
+					<label for="icon_telephone">Hike Name (max 17 characters)*</label>
 				</div>
 			</div>
 			<div class="row">
@@ -88,7 +88,7 @@
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">add_location</i>
 					<input type="text" id="hike_coordinates" name="hike_coordinates" value="{{hike.hike_coordinates}}"
-                value="{{hike.hike_coordinates}}" pattern="^\-?[0-9]{1,3}\.[0-9]+\,\s?\-?[0-9]{1,3}\.[0-9]+$" required>
+                value="{{hike.hike_coordinates}}" pattern="^\-?[0-9]{1,3}\.[0-9]+\,\s?\-?[0-9]{1,3}\.[0-9]+$">
 					<label for="icon_telephone">Hike Coordinates*</label>
 				</div>
 			</div>
