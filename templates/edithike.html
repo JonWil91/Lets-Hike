@@ -55,13 +55,13 @@
 			<div class="row">
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">grade</i>
-					<input name="hike_difficulty" id="hike_difficulty" type="text" value="{{hike.hike_difficulty}}">
-					<label for="icon_telephone">Hike Difficulty</label>
+					<input min="0" max="5" name="hike_difficulty" id="hike_difficulty" type="number" value="{{hike.hike_difficulty}}">
+					<label for="icon_telephone">Hike Difficulty (0 - 5)</label>
 				</div>
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">my_location</i>
 					<input name="hike_name" maxlength="17" id="hike_name" type="text" value="{{hike.hike_name}}">
-					<label for="icon_telephone">Hike Name</label>
+					<label for="icon_telephone">Hike Name (no spaces, max 17 characters)</label>
 				</div>
 			</div>
 			<div class="row">
