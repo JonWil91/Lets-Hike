@@ -79,6 +79,10 @@ body {
 
 /* Hikes */
 
+.mobile-hike-text {
+    display: none;
+}
+
 .maps {
     height: 450px;
     border-radius: 20px;
@@ -164,7 +168,12 @@ body {
 
 /* /Add Hikes */
 
+ /* Media Queries */
 
+ @media only screen and (max-width: 450px) {
+.mobile-hike-text {
+    display: block;
+  }
+}
 
-
-
+ /* /Media Queries */
