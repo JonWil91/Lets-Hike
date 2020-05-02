@@ -13,11 +13,33 @@
 				<p id="county" name="county_name">
 					<strong>County:</strong> {{hike.county_name}}
 				</p>
+				{% if hike.hike_difficulty %}
 				<p><strong>Difficulty:</strong> {{hike.hike_difficulty}}/5</p>
+				{% else %}
+				<p><strong>Difficulty:</strong> Unknown</p>
+				{% endif %}
+
 				<p><strong>Hike Description / Directions:</strong> {{hike.hike_description}}</p>
+
+				{% if hike.hike_duration %}
 				<p><strong>Hike Duration:</strong> {{hike.hike_duration}}</p>
+				{% else %}
+				<p><strong>Hike Description / Directions:</strong> {{hike.hike_description}}</p>
+				{% endif %}
+
+				{% if hike.hike_distance %}
 				<p><strong>Hike Distance:</strong> {{hike.hike_distance}}</p>
+				{% else %}
+				<p><strong>Hike Distance:</strong> Unknown</p>
+				{% endif %}
+
+				{% if hike.hike_postcode %}
 				<p><strong>Hike Location:</strong> {{hike.hike_postcode}}</p>
+				{% else %}
+				<p><strong>Hike Location:</strong> Unknown</p>
+				{% endif %}
+
+				<p><strong>Coordinates:</strong> {{hike.hike_coordinates}}</p>
 			</div>
 			<p><strong>Hike Attributes:</strong>
 				<ul class="collection">
@@ -79,6 +101,9 @@
             center: [{{hike.hike_coordinates}}],
             zoom: 14
         });
+
+        var zoommarker = L.marker([{{hike.hike_coordinates}}]).addTo(hikeName).bindPopup('{{hike.hike_name}}');
+
 	</script>
 
 	{% endblock %}

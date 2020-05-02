@@ -3,12 +3,15 @@
 <h2 class="title-text">Edit Hike</h2>
 <div class="container">
 	<div class="row input-box">
+    <p>Fill out the information below and click the Edit Hike button for your data to be amended.
+			Information on how to add coordinates can be found on the <a href="{{url_for('about')}}">About</a> page. Please note all '*' fields are required.
+		</p>
 		<form action="{{ url_for('update_hike', hike_id=hike._id) }}" method="POST" class="col s12">
 			<div class="row">
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">poll</i>
-					<select id="county" name="county_name">
-                <option value="" disabled>Choose your option</option>
+					<select id="county" name="county_name" required>
+                <option value="" disabled>Choose your option*</option>
                 <optgroup label="England">
                   {% for cat in engcounties %}
                     {% if cat.eng_county == hike.county_name %}
@@ -37,19 +40,19 @@
                   {% endfor %}
                 </optgroup>
             </select>
-					<label>Country / County</label>
+					<label>Country / County*</label>
 				</div>
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">assignment</i>
-					<input id="hike_region" name="hike_region" type="text" class="validate" value="{{hike.hike_region}}">
-					<label for="icon_prefix">Hike Town / City</label>
+					<input id="hike_region" name="hike_region" type="text" class="validate" value="{{hike.hike_region}}" required>
+					<label for="icon_prefix">Hike Town / City*</label>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s12">
 					<i class="material-icons prefix">comment</i>
-					<input name="hike_description" id="hike_description" type="text" value="{{hike.hike_description}}">
-					<label for="icon_telephone">Hike Description / Directions</label>
+					<input name="hike_description" id="hike_description" type="text" value="{{hike.hike_description}}" required>
+					<label for="icon_telephone">Hike Description / Directions*</label>
 				</div>
 			</div>
 			<div class="row">
@@ -60,8 +63,8 @@
 				</div>
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">my_location</i>
-					<input name="hike_name" maxlength="17" id="hike_name" type="text" value="{{hike.hike_name}}">
-					<label for="icon_telephone">Hike Name (no spaces, max 17 characters)</label>
+					<input name="hike_name" maxlength="17" id="hike_name" type="text" value="{{hike.hike_name}}" required>
+					<label for="icon_telephone">Hike Name (no spaces, max 17 characters)*</label>
 				</div>
 			</div>
 			<div class="row">
@@ -85,8 +88,8 @@
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">add_location</i>
 					<input type="text" id="hike_coordinates" name="hike_coordinates" value="{{hike.hike_coordinates}}"
-                value="{{hike.hike_coordinates}}" pattern="^\-?[0-9]{1,3}\.[0-9]+\,\s?\-?[0-9]{1,3}\.[0-9]+$">
-					<label for="icon_telephone">Hike Coordinates</label>
+                value="{{hike.hike_coordinates}}" pattern="^\-?[0-9]{1,3}\.[0-9]+\,\s?\-?[0-9]{1,3}\.[0-9]+$" required>
+					<label for="icon_telephone">Hike Coordinates*</label>
 				</div>
 			</div>
 			<div class="row">
