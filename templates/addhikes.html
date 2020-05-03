@@ -4,8 +4,11 @@
 <div class="container">
 	<div class="row input-box">
 		<p>Fill out the information below and click the Add Hike button for your data to be added onto the Hikes page.
-			Information on how to add coordinates can be found on the <a href="{{url_for('about')}}">About</a> page.
-			Please note all '*' fields are required.
+			<br>
+			To add your coordinates please visit <a href="https://www.google.com/maps" target="_blank">Google Maps</a>,
+			search for your hike and then hold down left click on
+			the map to copy the coordinates and paste them in the field below. Please note all '*'
+			fields are required.
 		</p>
 		<form action="{{ url_for('insert_hikes') }}" method="POST" class="col s12">
 			<div class="row">
@@ -56,18 +59,15 @@
 			</div>
 			<div class="row">
 				<div class="input-field col s12 m6">
-					<div id="difficulty-slider">
-						<i class="material-icons prefix">grade</i>
-						<label for="hike_difficulty">Difficulty</label>
-					</div>
-					<p class="range-field">
-						<input type="range" id="hike_difficulty" name="hike_difficulty" min="1" max="5" />
-                    </p>
+					<i class="material-icons prefix">add_location</i>
+					<input type="text" id="hike_coordinates" class="form-control validate"
+                        name="hike_coordinates" pattern="^(-?\d+(\.\d+)?),\s*(-?\d+(\.\d+)?)$" required>
+					<label for="hike_coordinates">Hike Coordinates*</label>
 				</div>
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">my_location</i>
-					<input maxlength="16" name="hike_name" id="hike_name" type="text" class="form-control validate" required>
-					<label for="hike_name">Hike Name (please use underscores, max 16 characters)*</label>
+					<input pattern="[^' ']+" maxlength="16" name="hike_name" id="hike_name" type="text" class="form-control validate hike-name" required>
+					<label for="hike_name">Hike Name (use underscores, max 16 characters)*</label>
 				</div>
 			</div>
 			<div class="row">
@@ -89,10 +89,13 @@
 					<label for="hike_distance">Hike Distance</label>
 				</div>
 				<div class="input-field col s12 m6">
-					<i class="material-icons prefix">add_location</i>
-					<input type="text" id="hike_coordinates" class="form-control validate"
-                        name="hike_coordinates" pattern="^(-?\d+(\.\d+)?),\s*(-?\d+(\.\d+)?)$" required>
-					<label for="hike_coordinates">Hike Coordinates*</label>
+					<div id="difficulty-slider">
+						<i class="material-icons prefix">grade</i>
+						<label for="hike_difficulty">Difficulty</label>
+					</div>
+					<p class="range-field">
+						<input type="range" id="hike_difficulty" name="hike_difficulty" min="1" max="5" />
+                    </p>
 				</div>
 			</div>
 			<div class="row">
