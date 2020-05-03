@@ -28,6 +28,16 @@
                       <option value="{{cat.wales_county}}">{{cat.wales_county}}</option>
                   {% endfor %}
                 </optgroup>
+                <optgroup label="Ireland">
+                    {% for cat in irishcounties|sort(attribute="irish_county") %}
+                      <option value="{{cat.irish_county}}">{{cat.irish_county}}</option>
+                  {% endfor %}
+                </optgroup>
+                <optgroup label="Northern Ireland">
+                    {% for cat in northirishcounties|sort(attribute="north_ire_county") %}
+                      <option value="{{cat.north_ire_county}}">{{cat.north_ire_county}}</option>
+                  {% endfor %}
+                </optgroup>
             </select>
 					<label>Country / County*</label>
 				</div>

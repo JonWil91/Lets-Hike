@@ -35,10 +35,15 @@ def hikes():
     scot_county_list = [scotcounty for scotcounty in _scotcounties]
     _walescounties = mongo.db.wales_counties.find()
     wales_county_list = [walescounty for walescounty in _walescounties]
+    _irishcounties = mongo.db.irish_counties.find()
+    irish_county_list = [irishcounty for irishcounty in _irishcounties]
+    _northirishcounties= mongo.db.north_ire_counties.find()
+    north_ire_county_list = [northirishcounty for northirishcounty in _northirishcounties]
     for hike in hike_list:
         print(hike['hike_name'])
     return render_template('hikes.html', hikes = hike_list, engcounties= eng_county_list,
-                                        scotcounties = scot_county_list, walescounties = wales_county_list)
+                                        scotcounties = scot_county_list, walescounties = wales_county_list,
+                                        irishcounties = irish_county_list, northirishcounties = north_ire_county_list) 
 
 @app.route('/addhikes')
 def addhikes():
@@ -48,8 +53,13 @@ def addhikes():
     scot_county_list = [scotcounty for scotcounty in _scotcounties]
     _walescounties = mongo.db.wales_counties.find()
     wales_county_list = [walescounty for walescounty in _walescounties]
+    _irishcounties = mongo.db.irish_counties.find()
+    irish_county_list = [irishcounty for irishcounty in _irishcounties]
+    _northirishcounties= mongo.db.north_ire_counties.find()
+    north_ire_county_list = [northirishcounty for northirishcounty in _northirishcounties]
     return render_template('addhikes.html', engcounties= eng_county_list, scotcounties = scot_county_list,
-                                            walescounties = wales_county_list)
+                                            walescounties = wales_county_list, irishcounties = irish_county_list,
+                                            northirishcounties = north_ire_county_list) 
 
 @app.route('/insert_hikes', methods=['POST'])
 def insert_hikes():
