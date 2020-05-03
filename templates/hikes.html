@@ -57,7 +57,7 @@
 <script>
 	{% for hike in hikes %}
     
-    var marker = L.marker([{{hike.hike_coordinates}}]).addTo(map).bindPopup('{{hike.hike_name|replace('_', ' ')}}'); 
+    var marker = L.marker([{{hike.hike_coordinates}}]).addTo(map).bindPopup('<a href="{{ url_for( 'view_hike', hike_id=hike._id)}}">{{hike.hike_name|replace('_', ' ')}}</a>'); 
 
 
     if ( {{hike.hike_coordinates}} ) {
