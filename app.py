@@ -87,8 +87,11 @@ def edit_hike(hike_id):
     eng_counties =  mongo.db.eng_counties.find()
     scot_counties =  mongo.db.scot_counties.find()
     wales_counties =  mongo.db.wales_counties.find()
+    irish_counties =  mongo.db.irish_counties.find()
+    north_ire_counties =  mongo.db.north_ire_counties.find()
     return render_template('edithike.html', hike=the_hike, engcounties = eng_counties, 
-                            scotcounties = scot_counties, walescounties = wales_counties)
+                            scotcounties = scot_counties, walescounties = wales_counties,
+                            irishcounties = irish_counties, northirishcounties = north_ire_counties)
 
 @app.route('/update_hike/<hike_id>', methods=["POST"])
 def update_hike(hike_id):
