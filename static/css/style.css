@@ -46,7 +46,7 @@ body {
     -o-background-size: cover;
     background-size: cover;
 
-    display: flex;
+    display: absolute;
     justify-content: center;
     position: fixed;   
 }
@@ -182,3 +182,5 @@ body {
 
  /* /Media Queries */
 
+
+  

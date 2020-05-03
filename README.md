@@ -109,6 +109,50 @@ The main difference from the original wireframe made at the start of the project
 12. Google Fonts
 
 
+## Testing
+
+### Navbar
+
+The responsive Navbar was taken from the Materialize framework and amended to suit my needs. Each link within the navigation bar was tested across desktop to ensure that it took the user to the correct page without issue. On tablet and mobile devices the Navbar appears as a burgermenu dropdown feature, each link was tested within this device type also.
+
+Each link is coded in the base.html page and uses jinja templating with Python functions applied in the app.py file. Each link was tested extensively to ensure the user could navigate to each page regardless of what page is active. The brand logo is also routed to redirect the user to the home page, this is clear on the top left on desktop and is centred on tablet and mobile devices.
+
+
+## Home Page
+
+When testing the Home age across responsive devices it became apparent that the original image selected was not suitable for the purpose. Whilst being a positive scenic image it hindered the Home page title and lead text, making it difficult to read, especially on mobile. This was remedied with a different image and more focus being placed on ensuring the text is clear and legible. 
+
+## About Page
+
+No issues were faced with the About page. The linked within the navbar consistently worked as expected, and the one link within the text consistently takes the user to the intended destination (Google Maps) in a separate tab.
+
+## Hikes Page
+
+The Hikes page required frequest testing throughout development. The main feature of the page is a Leaflets Map at the top, which displays a marker on the coordinates that the user supplies for their hike, with a Leaflet popup with the user provided hike name when clicking on the marker. The map has a set default zoom and centre so that on all devices the UK is central and clear.
+
+In the later stages of development a bug was disocvered with the map markers, in that if a user were to type a random assortment of characters into the coordinates input field this would be accepted and no map marker would appear. This also had a knock on effect of preventing any hikes input after this one from having their map marker displayed. To remedy this the required pattern for the coordinates input field was fixed so it would only accept the proper format, which is demonstrated for example on the About page. In addition to this a class of 'form-control validate' was added to the input tag as well as making it a required field. One issue raised by a test user was that it was not clear that there was content below the map on mobile, this was remedied with a media query stating to scroll down to view the hike data.
+
+Each button, 'Edit', 'Delete' and 'View' were tested extensively on this page across all devices. As per the template routing using the Python functions in the app.py the 'Edit' button would always take the user the the Edit page for the ID of the hike they were selecting. The 'Delete' button would consistently remove the hike data immediately. After seeing how easy it could be to delete a hike in error an onclick feature was added to the button to confirm if the user wished to proceed. The 'View' button consistently would take to the user to a new page to view more information on the selected hike.
+
+## Add Hike
+
+The Country / County selection is a dropdown feature that shows all Counties within England, Scotland, Wales, Ireland and Northern Ireland. These counties are all presented by country in alphabetical order, this decision was made so that data would be separated by region and be easier to select. One bug that was encountered in testing was realising one county had been missed out and would not be in alphabetical order if added in late, to remedy this a sort feature was added within the jinja for loop for each country collection.
+
+As previously mentioned an issue arose with the input for the add coordinates field as the input pattern initially used did not work apppropriately and opened the Hikes page to bugs with the markers on the Leaflets map. This was fixed by changing the input pattern.
+
+A logical bug was discovered when one user tested the site and was able to select 6/5 as the difficulty for the hike. Whilst not affecting the functionality of the website it was a logical flaw, this was remedied by adding in a difficulty slider with minimum and maximum values applied.
+
+## Edit Hike
+
+The Edit Hike page was tested extensively to ensure that all data input by the user on the add hikes page would appear saved on the edit page. This initially proved an issue with the Attributes data as the options are not pulled from MongoDB but are added into the html of the Add Hikes page. To fix this issue a jinja if/else statement was applied to each attribute without using a for loop as with the Country / County selection dropdown.
+
+## View Hike Page
+
+The View Hike data, as displayed by the wireframes, was initially intended to be included on the main Hikes page. The data input by the user was initially to be displayed in a collapsible body from the content that remains on the Hikes page. Included on the View Hike page is another Leaflets map zoomed in on the coordinates the user has input as well as a marker. Unfortunately this feature did not work within a collapsible body, unless devtools was opened and closed. After investigating this issue it appeared to be a resizing issue faced by many others online and after being unable to resolve it, it was necessary to display the map outside the collapsible body. This did not look good for the user when displayed, and gave me the realisation it would be better displayed on it's own page. This would also avoid users having to load all the images and maps for each hike on one page.
+
+One bug that was encountered after a user testing the page was that they typed 
+
+
 
 
 
