@@ -46,21 +46,21 @@
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">assignment</i>
 					<input id="hike_region" name="hike_region" type="text" class="validate" value="{{hike.hike_region}}" required>
-					<label for="icon_prefix">Hike Town / City*</label>
+					<label for="hike_region">Hike Town / City*</label>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s12">
 					<i class="material-icons prefix">comment</i>
 					<input name="hike_description" id="hike_description" type="text" value="{{hike.hike_description}}" required>
-					<label for="icon_telephone">Hike Description / Directions*</label>
+					<label for="hike_description">Hike Description / Directions*</label>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s12 m6">
 					<div id="difficulty-slider">
 						<i class="material-icons prefix">grade</i>
-						<label>Difficulty</label>
+						<label for="hike_difficulty">Difficulty</label>
 					</div>
 					<p class="range-field">
 						<input type="range" id="hike_difficulty" name="hike_difficulty" min="0" max="5" value="{{hike.hike_difficulty}}"/>
@@ -69,33 +69,33 @@
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">gps_not_fixed</i>
 					<input name="hike_name" maxlength="17" id="hike_name" type="text" value="{{hike.hike_name}}" required>
-					<label for="icon_telephone">Hike Name (please use underscores, max 17 characters)*</label>
+					<label for="hike_name">Hike Name (please use underscores, max 17 characters)*</label>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">my_location</i>
 					<input name="hike_postcode" id="hike_postcode" type="text" value="{{hike.hike_postcode}}">
-					<label for="icon_telephone">Hike Post Code</label>
+					<label for="hike_postcode">Hike Post Code</label>
 				</div>
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">timer</i>
 					<input name="hike_duration" id="hike_duration" type="text" value="{{hike.hike_duration}}">
-					<label for="icon_telephone">Hike Duration</label>
+					<label for="hike_duration">Hike Duration</label>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">landscape</i>
 					<input name="hike_distance" id="hike_distance" type="text" value="{{hike.hike_distance}}">
-					<label for="icon_telephone">Hike Distance</label>
+					<label for="hike_distance">Hike Distance</label>
 				</div>
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">add_location</i>
 					<input type="text" id="hike_coordinates" class="form-control validate"
                         name="hike_coordinates" value="{{hike.hike_coordinates}}"
                         pattern="^(-?\d+(\.\d+)?),\s*(-?\d+(\.\d+)?)$" required>
-					<label for="icon_telephone">Hike Coordinates*</label>
+					<label for="hike_coordinates">Hike Coordinates*</label>
 				</div>
 			</div>
 			<div class="row">
@@ -132,7 +132,7 @@
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">add_a_photo</i>
 					<input id="img_url" name="img_url" type="text" value="{{hike.img_url}}">
-					<label>Image URL</label>
+					<label for="img_url">Image URL</label>
 				</div>
 			</div>
 			<div class="row">
