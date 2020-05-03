@@ -40,6 +40,24 @@
                         {% endif %}
                   {% endfor %}
                 </optgroup>
+                <optgroup label="Ireland">
+                    {% for cat in irishcounties|sort(attribute="irish_county") %}
+                        {% if cat.irish_county == hike.county_name %}
+                            <option value="{{cat.irish_county}}" selected>{{hike.county_name}}</option>
+                        {% else %}
+                            <option value="{{cat.irish_county}}">{{cat.irish_county}}</option>
+                        {% endif %}
+                  {% endfor %}
+                </optgroup>
+                <optgroup label="Northern Ireland">
+                    {% for cat in northirishcounties|sort(attribute="north_ire_county") %}
+                        {% if cat.north_ire_county == hike.county_name %}
+                            <option value="{{cat.north_ire_county}}" selected>{{hike.county_name}}</option>
+                        {% else %}
+                            <option value="{{cat.north_ire_county}}">{{cat.north_ire_county}}</option>
+                        {% endif %}
+                  {% endfor %}
+                </optgroup>
             </select>
 					<label>Country / County*</label>
 				</div>
