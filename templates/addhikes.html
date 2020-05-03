@@ -11,11 +11,11 @@
 			<div class="row">
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">poll</i>
-					<select id="county" name="county_name" required>
+					<select id="county" name="county_name" class="form-control validate" required>
                 <option value="" disabled selected>Choose your County*</option>
-                <optgroup label="England" class="england">
+                <optgroup label="England" class="blue-text">
                   {% for cat in engcounties|sort(attribute="eng_county") %}
-                      <option value="{{cat.eng_county}}" class="red">{{cat.eng_county}}</option>
+                      <option value="{{cat.eng_county}}" class="blue">{{cat.eng_county}}</option>
                   {% endfor %}
                 </optgroup>
                 <optgroup label="Scotland">
@@ -43,14 +43,14 @@
 				</div>
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">assignment</i>
-					<input id="hike_region" name="hike_region" type="text" required>
+					<input id="hike_region" name="hike_region" type="text" class="form-control validate" required>
 					<label for="icon_prefix">Hike Town / City*</label>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s12">
 					<i class="material-icons prefix">comment</i>
-					<input name="hike_description" id="hike_description" type="text" required>
+					<input name="hike_description" id="hike_description" type="text" class="form-control validate" required>
 					<label for="hike_description">Hike Description / Directions*</label>
 				</div>
 			</div>
@@ -66,8 +66,8 @@
 				</div>
 				<div class="input-field col s12 m6">
 					<i class="material-icons prefix">my_location</i>
-					<input maxlength="17" name="hike_name" id="hike_name" type="text" required>
-					<label for="hike_name">Hike Name (please use underscores, max 17 characters)*</label>
+					<input maxlength="16" name="hike_name" id="hike_name" type="text" class="form-control validate" required>
+					<label for="hike_name">Hike Name (please use underscores, max 16 characters)*</label>
 				</div>
 			</div>
 			<div class="row">
