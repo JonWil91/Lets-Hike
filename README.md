@@ -96,32 +96,36 @@ The main difference from the original wireframe made at the start of the project
 
 ## Technologies Used
 
-1. HTML
-2. CSS
-3. JavaScript
-4. Python
-5. Flask
-6. Jinja
-7. GitPod was the IDE used in the development of building this website.
-8. Materialize was used to aid the development process in the layout and responsiveness of the website.
-9. jQuery framework was used in conjunction with Materialize to refer to JavaScript technologies used to improve the efficiency of the website.
-10. MongoDB was the database used to host the website data
-11. The project was hosted on Heroku
-12. Google Fonts
-
+* HTML 5
+* CSS
+* JavaScript
+* Python
+* Flask
+* Jinja
+* PyMongo
+* GitPod was the IDE used in the development of building this website.
+* Materialize was used to aid the development process in the layout and responsiveness of the website.
+* jQuery framework was used in conjunction with Materialize to refer to JavaScript technologies used to improve the efficiency of the website.
+* MongoDB was the database used to host the website data
+* The project was hosted on Heroku
+* Google Fonts
+* Leaflet Maps
+* The W3C Mark Up Validation Service
 
 ## Testing
+
+Each page has been run through an online validator, using the W3C Mark Up Validation Service.
 
 ### Navbar
 
 The responsive Navbar was taken from the Materialize framework and amended to suit my needs. Each link within the navigation bar was tested across desktop to ensure that it took the user to the correct page without issue. On tablet and mobile devices the Navbar appears as a burgermenu dropdown feature, each link was tested within this device type also.
 
-Each link is coded in the base.html page and uses jinja templating with Python functions applied in the app.py file. Each link was tested extensively to ensure the user could navigate to each page regardless of what page is active. The brand logo is also routed to redirect the user to the home page, this is clear on the top left on desktop and is centred on tablet and mobile devices.
+Each link is coded in the base.html page and uses jinja templating with Python functions applied in the app.py file. Each link was tested extensively to ensure the user could navigate to each page regardless of what page is active, fulfilling the user goal of navigation throughout the website. The brand logo is also routed to redirect the user to the home page, this is clear on the top left on desktop and is centred on tablet and mobile devices.
 
 
 ## Home Page
 
-When testing the Home age across responsive devices it became apparent that the original image selected was not suitable for the purpose. Whilst being a positive scenic image it hindered the Home page title and lead text, making it difficult to read, especially on mobile. This was remedied with a different image and more focus being placed on ensuring the text is clear and legible. 
+When testing the Home age across responsive devices it became apparent that the original image selected was not suitable for the purpose. Whilst being a positive scenic image it hindered the Home page title and lead text, making it difficult to read, especially on mobile. This was an issue as it meant the user to not have a clear idea of the website purpose upon viewing the home page. This was remedied with a different image and more focus being placed on ensuring the text is clear and legible. 
 
 ## About Page
 
@@ -143,15 +147,76 @@ As previously mentioned an issue arose with the input for the add coordinates fi
 
 A logical bug was discovered when one user tested the site and was able to select 6/5 as the difficulty for the hike. Whilst not affecting the functionality of the website it was a logical flaw, this was remedied by adding in a difficulty slider with minimum and maximum values applied.
 
+Each required field has a * next to the label indicating this is an essential field, if a user fails to fill in one of these fields the Add Hike Button will not function and an altert will tell the user to fill in the selected field or to fill it in using the appropriate formart, as with the coorindates and the Hike Name.
+
 ## Edit Hike
 
 The Edit Hike page was tested extensively to ensure that all data input by the user on the add hikes page would appear saved on the edit page. This initially proved an issue with the Attributes data as the options are not pulled from MongoDB but are added into the html of the Add Hikes page. To fix this issue a jinja if/else statement was applied to each attribute without using a for loop as with the Country / County selection dropdown.
+
+Each required field has a * next to the label indicating this is an essential field, if a user fails to fill in one of these fields the Edit Hike Button will not function and an altert will tell the user to fill in the selected field or to fill it in using the appropriate formart, as with the coorindates and the Hike Name.
 
 ## View Hike Page
 
 The View Hike data, as displayed by the wireframes, was initially intended to be included on the main Hikes page. The data input by the user was initially to be displayed in a collapsible body from the content that remains on the Hikes page. Included on the View Hike page is another Leaflets map zoomed in on the coordinates the user has input as well as a marker. Unfortunately this feature did not work within a collapsible body, unless devtools was opened and closed. After investigating this issue it appeared to be a resizing issue faced by many others online and after being unable to resolve it, it was necessary to display the map outside the collapsible body. This did not look good for the user when displayed, and gave me the realisation it would be better displayed on it's own page. This would also avoid users having to load all the images and maps for each hike on one page.
 
 One bug that was encountered after a user testing the website was that they typed a longer than average Hike Name. This created issues on mobile view as the view page title pulls the data from Hike Name and had a fixed px font size, with the long page title forcing space on the right hand side. This was a simple fix of changing the font size type to em instead so it would be more responsive to the user device.
+
+## Deployment
+
+This project was developed using the GitPod IDE, committing to Git for every meaningful change and pushing commits to GitHub via the terminal Git commands. On GitHub I was able to view the Code Institute template reccomended for GitPod use, clone it, and then create my own repository with the template. After this it was possible to create a new workspace using GitPod.
+
+### Local Deployment
+
+In order for this project to be run locally, the user would require an IDE such as GitPod and the following features to be installed:
+
+* Python3
+* PIP
+* Git would be required for version control throughout
+
+Once you have met the above criteria you would be ready to clone this project to run locally. 
+
+* At the top of the page clicking the green 'Clone or Download' gives you two otions to clone this GitHub repository. You can download the file as a zip-file and upload it into your new workspace, please ensure that you unzip the file first. Or alternatively you can copy the repository web URL, open the Git CLI terminal and type: git clone https://github.com/JonWil91/Milestone-3.git.
+* Ensure you have navigated to the correct file location using the 'cd' command
+* The next step would be to create a file named 'env.py', this will be an important file for safely storying your credentials. You would need to store your MONGO_URI and SECRET_KEY values within this file. After this create a '.gitignore' file with the only input being the name of the file with your credentials, 'env.py'. Ensure that your 'app.py' file searches for this path or the workspace won't be able to find the MONGO_URI data.
+* The next required step would be ensuring you have an up to date requirements.txt file. This can be initialised by typing 'sudo -H pip3 -r requirements.txt' into the terminal, the syntax may differ slightly between IDE's as for use in GitPod the 'sudo' element was not required.
+
+It would be necessary to create an account with MongoDB also so that you can develop your daatabase using MongoDB Atlas. Once you have created your account you would need to set up a database called 'hiking_database'. You would then need to create 6 collections within that database. A collection was created for England, Scotland, Wales, Republic of Ireland and Northern Ireland to ensure that each County was added carefully, as allowing users to add these in on the website could cause issues with duplication and typos.
+
+The collection keeping all of the data added and edit by the user is the 'hikes' collection. The documents inserted into this are as follows:
+* hike_region:
+* county_name:
+* hike_description:
+* hike_difficulty
+* hike_postcode:
+* hike_duration:
+* hike_distance:
+* hike_name:
+* multiple_selection: (this will be the only object returning as an array)
+* hike_coordinates:
+* img_url:
+
+The Country collections should be completed as below:
+
+eng_counties - Collection
+eng_county - Object ID
+
+irish_counties - Collection
+irish_county - Object ID
+
+north_ire_counties - Collection
+north_ire_county - Object ID
+
+scot_counties - Collection
+scot_county - Object ID
+
+wales_counties - Collection
+wales_county - Object ID
+
+Once these steps have been completed you have everything ready to run the application. If you are using the GitPod IDE you would run the command python3 app.py which will initialise the app and give you the prompt to expose the local host you are running and open it on a browser.
+
+
+
+
 
 
 
