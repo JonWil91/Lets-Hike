@@ -8,8 +8,8 @@ The website can be found at [Let's Hike](https://ms3-hikingtrails.herokuapp.com/
 
 ## UX
 
-This website was developed for users who have an interest in hiking within the United Kingdom. They will be greeted on the home page with a landing page picture with a simple title stating the purpose of the website. For more information on the purpose and benefit of the website users can visit the about page.
-Users will be able to implement the CRUD system in order to add, view, edit and delete hikes with useful data presented for other hikers to visit those sites. Users can also visit a simple contact page if there is something that could or should be changed within the website.
+This website was developed for users who have an interest in hiking within the United Kingdom and the Republic of Ireland. They will be greeted on the home page with a landing page picture with a simple title stating the purpose of the website. For more information on the purpose and benefit of the website users can visit the about page.
+Users will be able to implement the CRUD system in order to create, review, update and delete hikes with useful data presented for other hikers to visit those sites. 
 
 ## User stories:
 
@@ -25,6 +25,7 @@ As a user on a mobile/tablet or desktop device I would:
 * Want to be able to edit data on the Edit Hikes page and for this to be saved
 * Want the view hikes button to take me to a page with more information on that hike
 * Want the view hike page to have useful data presented in a positive way
+* Want the back button on view hikes to return me to my previous page
 * Want the delete button to delete and remove hike data 
 
 ## Colour Scheme
@@ -57,7 +58,7 @@ The home page features a simple title with supporting text to give a concise des
 
 ### Hikes Page:
 
-Below the Hikes title is a map produced using Leaflet Maps using JavaScript. The default viewing position is to zoom in with the whole of the United Kingdom in focus with markers spread across the UK based on user input. As users fill in the add hikes form the option to provide coordinates adds a marker onto this map. This effect is effective across all devices. It is possible to zoom in and out of this map and scroll. 
+Below the Hikes title is a map produced using Leaflet Maps using JavaScript. The default viewing position is to zoom in with the whole of the United Kingdom in focus with markers spread across the UK based on user input. As users fill in the add hikes form the option to provide coordinates adds a marker onto this map. Users can click each marker, this will have a Leaflets popup effect with the name of the hike, which also acts as a link to that hike page as well. This effect is effective across all devices. It is possible to zoom in and out of this map and scroll. 
 
 Below the map the data input by the user on the Add Hikes page is displayed. Each piece of data is contains a simple white background with an Edit, Delete and View button for that hike and the town/city, county, and hike name inputted by the user. The rest of the data input by the user can be found by cicking the View button, in order to provide a clear page to display the data and to avoid the Hikes page becoming too overloaded with content as more hikes are added. The Edit Hikes button takes the user to the Edit Hike form, and the Delete button has an onclick popup feature to check whether the user wishes to proceed and delete the data. Each button has an on hover feature to change colour to make it clear to the user that each button is interactive.
 
@@ -69,7 +70,7 @@ By clicking the View button next to the hike of the interest, the user is able t
 
 Beneath the text, also side by side are the user selected URL image and a zoomed in map of the coordinates provided. The map coordinates are required on the add page form, but the image URL is optional, if the user chooses not to input a URL a default image stating 'No Image Found' is displayed to ensure the layout format is consistent.
 
-Beneath the image and the map the Edit and Delete button are displayed.
+Beneath the image and the map the Edit and Delete button are displayed, as well as a Back button. The Back button takes users back to the Hikes page.
 
 On mobile view all the data remains contained within the colored border box, but each field is displayed on it's own line in one column to make it easier to read.
 
@@ -150,7 +151,9 @@ The Edit Hike page was tested extensively to ensure that all data input by the u
 
 The View Hike data, as displayed by the wireframes, was initially intended to be included on the main Hikes page. The data input by the user was initially to be displayed in a collapsible body from the content that remains on the Hikes page. Included on the View Hike page is another Leaflets map zoomed in on the coordinates the user has input as well as a marker. Unfortunately this feature did not work within a collapsible body, unless devtools was opened and closed. After investigating this issue it appeared to be a resizing issue faced by many others online and after being unable to resolve it, it was necessary to display the map outside the collapsible body. This did not look good for the user when displayed, and gave me the realisation it would be better displayed on it's own page. This would also avoid users having to load all the images and maps for each hike on one page.
 
-One bug that was encountered after a user testing the page was that they typed 
+One bug that was encountered after a user testing the website was that they typed a longer than average Hike Name. This created issues on mobile view as the view page title pulls the data from Hike Name and had a fixed px font size, with the long page title forcing space on the right hand side. This was a simple fix of changing the font size type to em instead so it would be more responsive to the user device.
+
+
 
 
 

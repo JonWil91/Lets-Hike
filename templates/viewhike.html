@@ -34,7 +34,7 @@
 				{% endif %}
 
 				{% if hike.hike_postcode %}
-				<p><strong>Hike Location:</strong> {{hike.hike_postcode}}</p>
+				<p><strong>Hike Location:</strong>{% filter upper %} {{hike.hike_postcode}} {% endfilter %}</p>
 				{% else %}
 				<p><strong>Hike Location:</strong> Unknown</p>
 				{% endif %}
