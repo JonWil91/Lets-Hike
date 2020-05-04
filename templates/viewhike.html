@@ -74,9 +74,9 @@
 							class="waves-effect waves-light btn btn_small edit_button">Edit</a>
 						<a href="{{ url_for('delete_hike', hike_id=hike._id) }}"
 							onclick="return confirm('Are you sure you want to delete this hike?');"
-							class="waves-effect waves-light btn btn_small delete_button"
-							onclick="window.location.href='{{ url_for( 'view_hike', hike_id=hike._id)}}';">Delete</a>
-                            <a href="{{ url_for('hikes') }}" class="waves-effect waves-light btn btn_small view_button">Back</a>
+							class="waves-effect waves-light btn btn_small delete_button">Delete</a>
+						<a href="{{ url_for('hikes') }}"
+							class="waves-effect waves-light btn btn_small view_button">Back</a>
 					</div>
 				</div>
 			</div>
@@ -92,7 +92,7 @@
 	{% block js %}
 
 	<script>
-        var hikeName = {{hike.hike_name|replace(' ', '_')}};
+		var hikeName = {{hike.hike_name|replace(' ', '_')}};
 
         console.log('test')
 
@@ -112,5 +112,3 @@
 	</script>
 
 	{% endblock %}
-
-        <!-- var hikeName = {{hike.hike_name|replace(' ', '_')}}; -->

@@ -29,9 +29,8 @@
 									<a href="{{ url_for('delete_hike', hike_id=hike._id) }}"
 										onclick="return confirm('Are you sure you want to delete this hike?');"
 										class="waves-effect waves-light btn btn_small delete_button">Delete</a>
-									<a class="waves-effect waves-light btn btn_small view_button"
-										onclick="window.location.href='{{ url_for( 'view_hike', hike_id=hike._id)}}';">View
-										Hike</a>
+									<a href="{{ url_for( 'view_hike', hike_id=hike._id) }}"
+										class="waves-effect waves-light btn btn_small view_button">View Hike</a>
 								</div>
 							</div>
 							<div class="hike-summary-text col s10 center-align">
@@ -59,27 +58,10 @@
     
     var marker = L.marker([{{hike.hike_coordinates}}]).addTo(map).bindPopup('<a href="{{ url_for( 'view_hike', hike_id=hike._id)}}">{{hike.hike_name|replace('_', ' ')}}</a>'); 
 
-
     if ( {{hike.hike_coordinates}} ) {
      marker;
 }   
-        
     {% endfor %}
-
-
 </script>
 
 {% endblock %}
-
-<!-- var marker = L.marker([{{hike.hike_coordinates}}]).addTo(map).bindPopup('{{hike.hike_name|replace('_', ' ')}}'); -->
-
-<!-- var coordinates = {{hike.hike_coordinates}}
-
-
-        function coor(coordinates) {
-            
-            var marker = L.marker([coordinates]).addTo(map);
-            
-            }
-
-    coor(coordinates); -->
