@@ -214,7 +214,22 @@ wales_county - Object ID
 
 Once these steps have been completed you have everything ready to run the application. If you are using the GitPod IDE you would run the command python3 app.py which will initialise the app and give you the prompt to expose the local host you are running and open it on a browser.
 
+### Remote Deployment
 
+This website has been deployed on Heroku using the master branch on GitHub. To host the project on Heroku the following steps were taken:
+
+1. Sign up and create a free Heroku account and create a new app for later deployment
+2. Create a requirements.txt file so that Heroku can install the necessary dependencies to run the app. In the CLI terminal type 'pip3 freeze --local > requirements.txt'
+3. Create a Procfile which will tell Heroku what type of application is being deployed and how to run it. In the CLI terminal type 'echo web: python run.py > Procfile'
+4. In Heroku after creating the project app, click the 'Deploy' tab, choose GitHub as your deployment method and select Enable Automatic Deployment.
+5. Select the Settings tab next and click the 'Reveal Config Vars' button. You will then need to input the following details:
+* IP: 0.0.0.0
+* PORT: 8080
+* MONGO_URI: <link to your MongoDB>
+* MONGO_DBNAME: MongoDB database name
+* SECRET_KEY: <your own secret key>
+
+Once these steps have been followed you will be ready to deploy your website to Heroku.
 
 
 

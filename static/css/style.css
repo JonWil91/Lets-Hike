@@ -41,12 +41,8 @@ body {
     height: 100%;
     width: 100%;
     background: url("../images/scotland1.jpg") no-repeat bottom right fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
     background-size: cover;
-
-    display: absolute;
+    display: flex;
     justify-content: center;
     position: fixed;   
 }
@@ -154,7 +150,6 @@ body {
     border-color: #639058;
     margin: 10px;
     padding: 20px;
-    -webkit-appearance: none;
     background-color: #fafafa;
 }
 
