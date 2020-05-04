@@ -116,6 +116,13 @@ The main difference from the original wireframe made at the start of the project
 
 Each page has been run through an online validator, using the W3C Mark Up Validation Service.
 
+## Code Validation
+
+* I used the W3C HTML Validator tool to validate my HTML code. The W3C Validator tool doesn't recognise the Jinja templating, which resulted in it showing a lot of errors in relation to the Jinja code. However, all of the other code validates without error.
+* I used the W3C CSS Validator tool to validate my CSS code.
+* I used the JSHint tool to validate my JavaScript syntax. It found an error of an unused variable 'map', as this variable is declared inline on the 'hikes.html' page. There were also issues with it not recognising the Jinja templating.
+* I used the Pep8 Online tool to validate my Python syntax. Had to update a number of lines that were too long and blank spaces I had initially missed.
+
 ### Navbar
 
 The responsive Navbar was taken from the Materialize framework and amended to suit my needs. Each link within the navigation bar was tested across desktop to ensure that it took the user to the correct page without issue. On tablet and mobile devices the Navbar appears as a burgermenu dropdown feature, each link was tested within this device type also.
@@ -231,8 +238,21 @@ This website has been deployed on Heroku using the master branch on GitHub. To h
 
 Once these steps have been followed you will be ready to deploy your website to Heroku.
 
+## Credits 
 
+### Media
 
+* The default 'No Image Found' on the viewhike.html page in cases where the user does not provide a URL was taken from [Google Images](https://www.google.com/search?q=no+image+found&sxsrf=ALeKk037kfAGusljRBo7qXnd9969vrCcTw:1588604631821&source=lnms&tbm=isch&sa=X&ved=2ahUKEwijj5K2vZrpAhXJMMAKHZEuC8AQ_AUoAXoECAwQAw&biw=1920&bih=978#imgrc=lWVec5RfjFDSGM)
+* [Leaflet Maps](https://leafletjs.com/) was used to provide the maps, tilelayers, attribution and markers across the website.
+* The image on the home page is owned by me
+
+### Code 
+
+* env.py and .gitignore code was taken from Slack and Code Institute online mentors
+
+## Acknowledgements
+
+ A big thank you to my mentor, Gerry McBride for continued support and positive feedback throughout the project. A special thanks as well to all the Code Institute online support team
 
 
 

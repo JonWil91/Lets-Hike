@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
 {% block content %}
 
-
 <h2 class="title-text">{{hike.hike_name|replace('_', ' ')}} Hike</h2>
-
 
 <div class="container center-align">
 	<div class="row input-box">
@@ -52,7 +50,6 @@
 				</ul>
 			</p>
 		</div>
-
 		<div class="row">
 			<div class="col s12 m6">
 				{% if hike.img_url %}
@@ -84,13 +81,9 @@
 	{% endblock %}
 
 	{% block js %}
-
 	<script>
 		var hikeName = {{hike.hike_name|replace(' ', '_')}};
 
-        console.log('test')
-
-        
 		var mapTileLayers{{hike.hike_name|replace(' ', '_')}} = L.tileLayer("http://services.arcgisonline.com/arcgis/rest/services/World_Street_Map/MapServer/tile/{z}/{y}/{x}", {
             attribution: "Powered by <a href='https://developers.arcgis.com/terms/attribution/' target='_blank' rel='noopener'>Esri</a>"
         });
@@ -102,7 +95,5 @@
         });
 
         var zoom_marker = L.marker([{{hike.hike_coordinates}}]).addTo(hikeName);
-
 	</script>
-
 	{% endblock %}
