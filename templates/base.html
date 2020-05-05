@@ -15,6 +15,7 @@
 
 <body>
 	<header>
+		<!-- Navbar -->
 		<nav>
 			<div class="nav-wrapper navbar">
 				<a href="{{url_for('home')}}" class="brand-logo">Let's Hike</a>
@@ -33,24 +34,26 @@
 				</ul>
 			</div>
 		</nav>
+		<!-- Navbar -->
 	</header>
 
 	<main class="content">
+		<!-- Main Content -->
 		{% block content %}
 
 		{% endblock %}
+		<!-- Main Content     -->
 	</main>
 
 	<footer>
+		<!-- Footer -->
 		<div class="row footer">
 			<div class="col">
 				<p>Copyright JR Williams</p>
 			</div>
 		</div>
+		<!-- Footer -->
 	</footer>
-
-
-
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
