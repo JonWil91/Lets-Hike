@@ -123,6 +123,17 @@ Each page has been run through an online validator, using the W3C Mark Up Valida
 * I used the JSHint tool to validate my JavaScript syntax. It found an error of an unused variable 'map', as this variable is declared inline on the 'hikes.html' page. There were also issues with it not recognising the Jinja templating.
 * I used the Pep8 Online tool to validate my Python syntax. Had to update a number of lines that were too long and blank spaces I had initially missed.
 
+
+## Compatability
+
+To ensure that the website is accessible and runs across different devices and browsers, I have tested it on the following:
+
+* Chrome
+* Safari
+* Microsoft Edge
+* Firefox
+* Opera
+
 ### Navbar
 
 The responsive Navbar was taken from the Materialize framework and amended to suit my needs. Each link within the navigation bar was tested across desktop to ensure that it took the user to the correct page without issue. On tablet and mobile devices the Navbar appears as a burgermenu dropdown feature, each link was tested within this device type also.
@@ -184,7 +195,7 @@ Once you have met the above criteria you would be ready to clone this project to
 
 * At the top of the page clicking the green 'Clone or Download' gives you two otions to clone this GitHub repository. You can download the file as a zip-file and upload it into your new workspace, please ensure that you unzip the file first. Or alternatively you can copy the repository web URL, open the Git CLI terminal and type: git clone https://github.com/JonWil91/Milestone-3.git.
 * Ensure you have navigated to the correct file location using the 'cd' command
-* The next step would be to create a file named 'env.py', this will be an important file for safely storying your credentials. You would need to store your MONGO_URI and SECRET_KEY values within this file. After this create a '.gitignore' file with the only input being the name of the file with your credentials, 'env.py'. Ensure that your 'app.py' file searches for this path or the workspace won't be able to find the MONGO_URI data.
+* The next step would be to create a file named 'env.py', this will be an important file for safely storying your credentials. You would need to store your MONGO_URI and SECRET_KEY values within this file.
 * The next required step would be ensuring you have an up to date requirements.txt file. This can be initialised by typing 'sudo -H pip3 -r requirements.txt' into the terminal, the syntax may differ slightly between IDE's as for use in GitPod the 'sudo' element was not required.
 
 It would be necessary to create an account with MongoDB also so that you can develop your daatabase using MongoDB Atlas. Once you have created your account you would need to set up a database called 'hiking_database'. You would then need to create 6 collections within that database. A collection was created for England, Scotland, Wales, Republic of Ireland and Northern Ireland to ensure that each County was added carefully, as allowing users to add these in on the website could cause issues with duplication and typos.
@@ -249,10 +260,12 @@ Once these steps have been followed you will be ready to deploy your website to 
 ### Code 
 
 * env.py and .gitignore code was taken from Slack and Code Institute online mentors
+* [Template Designer Documentation](https://jinja.palletsprojects.com/en/2.11.x/templates/#sort) was very helpful in overcoming Jinja hurdles
 
 ## Acknowledgements
 
- A big thank you to my mentor, Gerry McBride for continued support and positive feedback throughout the project. A special thanks as well to all the Code Institute online support team
+ A big thank you to my mentor, Gerry McBride for  support and positive feedback throughout the project. A special thanks as well to all the Code Institute online support team for their continued patience and encouragement throughout the project.
+ 
 
 
 
