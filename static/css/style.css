@@ -1,4 +1,5 @@
 /* Multiple Pages */
+
 html, body {
   height: 100%;
 }
@@ -24,6 +25,24 @@ body {
     margin: 5px 0;
     padding: 0 0.5em;
 }
+
+/* Base.html code taken from
+(https://stackoverflow.com/questions/16679146/force-footer-on-bottom-on-pages-with-little-content/50659635#50659635) */
+
+.content {
+    flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+  width: 100%;
+  background: #639058;
+  color: #fafafa;
+  margin-bottom: 0;
+  margin-top: 50px;
+}
+
+/* /Base.html */
 
 /* /Multiple Pages */
 
@@ -57,7 +76,6 @@ body {
     background-color: transparent !important;
     text-align: center;
     color: #fafafa;
-
 }
 
 .jumbotron-header {
@@ -113,11 +131,11 @@ body {
 .view_button:hover {
     background-color: #ce9b4f;
 }
+
 .hikes-summary {
     background-color: #fafafa;
     padding: 1px;
 }
-
 
 /* /Hikes */
 
@@ -148,7 +166,7 @@ body {
 
 /* /View Hike */
 
-/* Add Hikes */
+/* Add/Edit Hikes */
 
 .input-box {
     border-style: solid;
@@ -156,10 +174,6 @@ body {
     border-color: #639058;
     margin: 10px;
     padding: 20px;
-    background-color: #fafafa;
-}
-
-.collapsible-header, .collapsible-body {
     background-color: #fafafa;
 }
 
@@ -171,7 +185,7 @@ body {
     padding-bottom: 15px;
 }
 
-/* /Add Hikes */
+/* /Add/Edit Hikes */
 
  /* Media Queries */
 
@@ -180,29 +194,6 @@ body {
     display: block;
   }
 }
+
  /* /Media Queries */
 
-
-/* .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 60px;
-    background: #639058;
-    color: #fafafa;
-    margin-bottom: 0;
-    flex-shrink: 0;
-} */
-
-.content {
-    flex: 1 0 auto;
-}
-
-.footer {
-  flex-shrink: 0;
-  width: 100%;
-  background: #639058;
-  color: #fafafa;
-  margin-bottom: 0;
-  margin-top: 50px;
-}

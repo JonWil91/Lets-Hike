@@ -1,4 +1,5 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %}
+{% block content %}
 
 <h2 class="title-text">Add Hike</h2>
 <div class="container">
@@ -16,9 +17,9 @@
 					<i class="material-icons prefix">poll</i>
 					<select id="county" name="county_name" class="form-control validate" required>
                 <option value="" disabled selected>Choose your County*</option>
-                <optgroup label="England" class="blue-text">
+                <optgroup label="England">
                   {% for cat in engcounties|sort(attribute="eng_county") %}
-                      <option value="{{cat.eng_county}}" class="blue">{{cat.eng_county}}</option>
+                      <option value="{{cat.eng_county}}">{{cat.eng_county}}</option>
                   {% endfor %}
                 </optgroup>
                 <optgroup label="Scotland">
