@@ -183,7 +183,10 @@ body {
     bottom: 0;
     width: 100%;
     height: 60px;
-    background: #6cf;
+    background: #639058;
+    color: #fafafa;
+    margin-bottom: 0;
+    flex-shrink: 0;
     
 }
 
