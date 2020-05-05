@@ -1,9 +1,13 @@
 /* Multiple Pages */
+html, body {
+  height: 100%;
+}
 
 body {
     font-family: 'Montserrat', sans-serif;
     background-color: #e3eae4;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .title-text {
@@ -45,7 +49,8 @@ body {
     background-size: cover;
     display: flex;
     justify-content: center;
-    position: fixed;   
+    position: fixed;
+    z-index: -1; 
 }
 
 .jumbotron {
@@ -178,7 +183,7 @@ body {
  /* /Media Queries */
 
 
-.footer {
+/* .footer {
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -187,6 +192,17 @@ body {
     color: #fafafa;
     margin-bottom: 0;
     flex-shrink: 0;
-    
+} */
+
+.content {
+    flex: 1 0 auto;
 }
 
+.footer {
+  flex-shrink: 0;
+  width: 100%;
+  background: #639058;
+  color: #fafafa;
+  margin-bottom: 0;
+  margin-top: 50px;
+}
