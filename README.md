@@ -2,7 +2,7 @@ Milestone Project 3
 
 # Let's Hike 
 
-This website is my third project after the culmination of studying Practial Python and Data Centric Development, including Flask and the MongoDB database system.
+This website is my third project after the culmination of studying Practial Python and Data Centric Development, including Flask and the MongoDB database system. It enables users to visit and add hikes within the UK and the Republic of Ireland as well as viewing hikes added by other users.
 
 The website can be found at [Let's Hike](https://ms3-hikingtrails.herokuapp.com/home)
 
@@ -40,8 +40,7 @@ The website can be found at [Let's Hike](https://ms3-hikingtrails.herokuapp.com/
 
 ## UX
 
-This website was developed for users who have an interest in hiking within the United Kingdom and the Republic of Ireland. They will be greeted on the home page with a landing page picture with a simple title stating the purpose of the website. For more information on the purpose and benefit of the website users can visit the about page.
-Users will be able to implement the CRUD system in order to create, review, update and delete hikes with useful data presented for other hikers to visit those sites. 
+This website was developed for users who have an interest in hiking within the United Kingdom and the Republic of Ireland. They will be greeted on the home page with a landing page picture with a simple title stating the purpose of the website. Using the CRUD operations users will be able to create, review, update and delete hikes with useful data presented for other hikers to see. It comes as the result of a personal interest and joy in hiking and understanding the benefit of being able to search for and add hikes. 
 
 ## User stories:
 
@@ -164,9 +163,10 @@ To ensure that the website is accessible and runs across different devices and b
 
 * Chrome
 * Safari
-* Microsoft Edge
 * Firefox
 * Opera
+* Microsoft Edge
+    - Issues with adding and updating the hike attributes, and buttons on the hikes pages were not displayed in a neat stacked row as with other browsers
 
 ### Navbar
 
@@ -277,9 +277,9 @@ This website has been deployed on Heroku using the master branch on GitHub. To h
 5. Select the Settings tab next and click the 'Reveal Config Vars' button. You will then need to input the following details:
 * IP: 0.0.0.0
 * PORT: 8080
-* MONGO_URI: <link to your MongoDB>
+* MONGO_URI: link to your MongoDB
 * MONGO_DBNAME: MongoDB database name
-* SECRET_KEY: <your own secret key>
+* SECRET_KEY: your own secret key
 
 Once these steps have been followed you will be ready to deploy your website to Heroku.
 
@@ -301,10 +301,4 @@ Once these steps have been followed you will be ready to deploy your website to 
 
 ### Acknowledgements
 
- A big thank you to my mentor, Gerry McBride for  support and positive feedback throughout the project. A special thanks as well to all the amazing Code Institute online support team for their continued patience and encouragement throughout the project.
-
-
-
-
-
-
+ A big thank you to my mentor, Gerry McBride for  support and positive feedback throughout the project. A special thanks as well to all the Code Institute online support team for their continued patience and encouragement throughout the project.
