@@ -1,10 +1,42 @@
 Milestone Project 3
 
-# Let's Hike
+# Let's Hike 
 
 This website is my third project after the culmination of studying Practial Python and Data Centric Development, including Flask and the MongoDB database system.
 
 The website can be found at [Let's Hike](https://ms3-hikingtrails.herokuapp.com/home)
+
+## Table of Contents
+
+1. [**UX**](#ux)
+    - [**User Stories**](#user-stories)
+    - [**Colour Scheme**](#colour-scheme)
+    - [**Wireframes**](#wireframes)
+2. [**Features**](#features)
+    - [**Navbar**](#navbar)
+    - [**Home Page**](#home-page)
+    - [**Hikes Page**](#hikes-page)
+    - [**View Hikes Page**](#view-hikes-page)
+    - [**Add Hikes Page**](#add-hikes-page)
+    - [**Edit Hikes Page**](#edit-hikes-page)
+    - [**Additional Features to be Implemented**](#additional-features-to-be-implemented)
+3. [**Technologies Used**](#technologies-used)
+4. [**Testing**](#testing)
+    - [**Code Validation**](#code-validation)
+    - [**Compatability**](#compatability)
+    - [**Navbar**](#navbar)
+    - [**About Page**](#about-page)
+    - [**Hikes Page**](#hikes-page)
+    - [**View Hikes Page**](#view-hikes-page)
+    - [**Add Hikes Page**](#add-hikes-page)
+    - [**Edit Hikes Page**](#edit-hikes-page)
+5. [**Deployment**](#deployment)
+    - [**Local Deployment**](#local-deployment)
+    - [**Remote Deployment**](#remote-deployment)
+6. [**Credits**](#credits)
+    - [**Media**](#media)
+    - [**Code**](#code)
+    - [**Acknowledgements**](#acknowledgements)
 
 ## UX
 
@@ -41,6 +73,12 @@ With the exception for the landing page, where the title is white on top of a sc
 The colour green (#639058) is used throughout the website. In addition to being the colour for the header, it is also used for the Edit button across various page and the border colour for the Add Hike/Edit Hike/View Hike content as well as the image and zoomed in map on the View Hike page. This was to keep consistency throughout the site.
 
 On the Hikes page there are three buttons, the Edit button is the (#639058) green colour, the Delete button is a (#0980c5) blue colour to go with the blue water colour on the main Hikes map, and it has a hover colour of a (#f70b0b) red colour. The View hike button has a (#a05709) brown colour to match the title font colours.
+
+### Wireframes
+
+For my Wireframes I used Balsamiq Wireframes, this was largely due to how user friendly I found the site as well as the fact that Code Institute have provided students with a free ID to use the Balsamiq resources that expires at the end of 2020.
+
+The main difference from the original wireframe made at the start of the project was how the data was presented on the Hikes page. Originally the intention was to have all the hike data presented on the Hikes page using an accordian effect. Upon viewing this in action I decided it did not look as nice as it could, and it would result in numerous images and maps being loaded on one page unnecessarily. With this in mind I added a view button to each hike summary so that this data could be presented on a page by itself.
 
 ## Features
 
@@ -83,10 +121,6 @@ The input form for the add hikes is within a green colored border box, in keepin
 The Edit hikes follows the same layout format as the add hikes page to keep consistency. The selection choices are saved in case users only wish to amend one field. The Edit Hike button updates the hike data and reroutes the user to the hikes page.
 
 The icons used on the input fields for both the Add Hike and Edit Hike pages were also taken from the Materialize. I found there was a slightly more limited choice of icons than if I had choosen an alterntiave such as Font Awesome used in the past, but there was enough to suit my purpose and I wanted to avoid adding additional dependencies into the project unnecessarily.
-
-### Changes to Wireframes
-
-The main difference from the original wireframe made at the start of the project was how the data was presented on the Hikes page. Originally the intention was to have all the hike data presented on the Hikes page using an accordian effect. Upon viewing this in action I decided it did not look as nice as it could, and it would result in numerous images and maps being loaded on one page unnecessarily. With this in mind I added a view button to each hike summary so that this data could be presented on a page by itself.
 
 ### Additional features to be implemented:
 
@@ -157,7 +191,13 @@ In the later stages of development a bug was disocvered with the map markers, in
 
 Each button, 'Edit', 'Delete' and 'View' were tested extensively on this page across all devices. As per the template routing using the Python functions in the app.py the 'Edit' button would always take the user the the Edit page for the ID of the hike they were selecting. The 'Delete' button would consistently remove the hike data immediately. After seeing how easy it could be to delete a hike in error an onclick feature was added to the button to confirm if the user wished to proceed. The 'View' button consistently would take to the user to a new page to view more information on the selected hike.
 
-## Add Hike
+## View Hike Page
+
+The View Hike data, as displayed by the wireframes, was initially intended to be included on the main Hikes page. The data input by the user was initially to be displayed in a collapsible body from the content that remains on the Hikes page. Included on the View Hike page is another Leaflets map zoomed in on the coordinates the user has input as well as a marker. Unfortunately this feature did not work within a collapsible body, unless devtools was opened and closed. After investigating this issue it appeared to be a resizing issue faced by many others online and after being unable to resolve it, it was necessary to display the map outside the collapsible body. This did not look good for the user when displayed, and gave me the realisation it would be better displayed on it's own page. This would also avoid users having to load all the images and maps for each hike on one page.
+
+One bug that was encountered after a user testing the website was that they typed a longer than average Hike Name. This created issues on mobile view as the view page title pulls the data from Hike Name and had a fixed px font size, with the long page title forcing space on the right hand side. This was a simple fix of changing the font size type to em instead so it would be more responsive to the user device.
+
+## Add Hikes
 
 The Country / County selection is a dropdown feature that shows all Counties within England, Scotland, Wales, Ireland and Northern Ireland. These counties are all presented by country in alphabetical order, this decision was made so that data would be separated by region and be easier to select. One bug that was encountered in testing was realising one county had been missed out and would not be in alphabetical order if added in late, to remedy this a sort feature was added within the jinja for loop for each country collection.
 
@@ -167,17 +207,11 @@ A logical bug was discovered when one user tested the site and was able to selec
 
 Each required field has a * next to the label indicating this is an essential field, if a user fails to fill in one of these fields the Add Hike Button will not function and an altert will tell the user to fill in the selected field or to fill it in using the appropriate formart, as with the coorindates and the Hike Name.
 
-## Edit Hike
+## Edit Hikes
 
 The Edit Hike page was tested extensively to ensure that all data input by the user on the add hikes page would appear saved on the edit page. This initially proved an issue with the Attributes data as the options are not pulled from MongoDB but are added into the html of the Add Hikes page. To fix this issue a jinja if/else statement was applied to each attribute without using a for loop as with the Country / County selection dropdown.
 
 Each required field has a * next to the label indicating this is an essential field, if a user fails to fill in one of these fields the Edit Hike Button will not function and an altert will tell the user to fill in the selected field or to fill it in using the appropriate formart, as with the coorindates and the Hike Name.
-
-## View Hike Page
-
-The View Hike data, as displayed by the wireframes, was initially intended to be included on the main Hikes page. The data input by the user was initially to be displayed in a collapsible body from the content that remains on the Hikes page. Included on the View Hike page is another Leaflets map zoomed in on the coordinates the user has input as well as a marker. Unfortunately this feature did not work within a collapsible body, unless devtools was opened and closed. After investigating this issue it appeared to be a resizing issue faced by many others online and after being unable to resolve it, it was necessary to display the map outside the collapsible body. This did not look good for the user when displayed, and gave me the realisation it would be better displayed on it's own page. This would also avoid users having to load all the images and maps for each hike on one page.
-
-One bug that was encountered after a user testing the website was that they typed a longer than average Hike Name. This created issues on mobile view as the view page title pulls the data from Hike Name and had a fixed px font size, with the long page title forcing space on the right hand side. This was a simple fix of changing the font size type to em instead so it would be more responsive to the user device.
 
 ## Deployment
 
@@ -261,14 +295,13 @@ Once these steps have been followed you will be ready to deploy your website to 
 
 * env.py and .gitignore code was taken from Slack and Code Institute online mentors
 * [Template Designer Documentation](https://jinja.palletsprojects.com/en/2.11.x/templates/#sort) was very helpful in overcoming Jinja hurdles
+* Code for content and footer classes taken from [Stack Overflow](https://stackoverflow.com/questions/16679146/force-footer-on-bottom-on-pages-with-little-content/50659635#50659635)
+* Code for intialising Leaflet Maps taken from https://leafletjs.com/
+* [Materialize](https://materializecss.com/) used for buttons throughout project, as well as dropdown, slider and multi select options on add/edit hike pages
 
-## Acknowledgements
+### Acknowledgements
 
- A big thank you to my mentor, Gerry McBride for  support and positive feedback throughout the project. A special thanks as well to all the Code Institute online support team for their continued patience and encouragement throughout the project.
- 
-
-
-
+ A big thank you to my mentor, Gerry McBride for  support and positive feedback throughout the project. A special thanks as well to all the amazing Code Institute online support team for their continued patience and encouragement throughout the project.
 
 
 
